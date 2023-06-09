@@ -17,6 +17,17 @@ To use the AI Agent Host, follow these steps:
 1. Set up or use an existing environment with Docker installed.
 
 2. Clone the AI Agent Host repository and navigate to the project directory.
+```
+git clone <repository_url>
+cd <project_directory>
+
+```
+3. Launch the AI Agent Host using the provided docker-compose configuration.
+
+```
+docker-compose up -d
+
+```
 
 4. Once the services are up and running, you can access the AI Agent Host interfaces:
 
