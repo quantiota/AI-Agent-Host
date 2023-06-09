@@ -4,7 +4,7 @@ The AI Agent Host is a module-based environment designed to facilitate rapid exp
 
 ## Features
 
-1. **QuestDB: QuestDB** is a high-performance, open-source time-series database. It allows for efficient storage and querying of time-series data, making it ideal for working with real-time data streams.
+1. **QuestDB**: QuestDB is a high-performance, open-source time-series database. It allows for efficient storage and querying of time-series data, making it ideal for working with real-time data streams.
 
 2. **Grafana**: Grafana is a popular open-source platform for data visualization and monitoring. It provides a rich set of features for creating interactive dashboards and visualizing data from various sources.
 
