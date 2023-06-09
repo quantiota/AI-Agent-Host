@@ -18,8 +18,8 @@ To use the AI Agent Host, follow these steps:
 
 2. Clone the AI Agent Host repository and navigate to the project directory.
 ```
-git clone <repository_url>
-cd <project_directory>
+git clone https://github.com/BouarfaMahi/AI-Agent-Host.git
+cd AI-Agent-Host
 
 ```
 3. Launch the AI Agent Host using the provided docker-compose configuration.
