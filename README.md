@@ -1,4 +1,4 @@
-# AI-Agent-Host
+# AI Agent Host
 
 The AI Agent Host is a module-based environment designed to facilitate rapid experimentation and testing. It includes a docker-compose configuration with QuestDB, Grafana, and Code-Server. The AI Agent Host provides a seamless interface for managing and querying data, visualizing results, and coding in real-time.
 
