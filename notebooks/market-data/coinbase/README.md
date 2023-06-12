@@ -13,7 +13,6 @@ function save_trades_quest(trades)
     end
     close(cs)
 end
-
 ```
 
 
