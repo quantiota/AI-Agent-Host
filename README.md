@@ -44,7 +44,7 @@ docker-compose up -d
 Start working with your notebooks and data, using the pre-installed tools and libraries that are included in your remote environment.
 
 
-### AI Agent Lab Architecture Diagram
+### AI Agent Host Architecture Diagram
 
  ![AI Agent Host diagram](./ai-agent-host-diagram.png)
  
