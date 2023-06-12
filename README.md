@@ -42,3 +42,10 @@ docker-compose up -d
 - Connect to the remote JupyterHub environment from within the Code-Server interface provided by the AI Agent Host
 
 Start working with your notebooks and data, using the pre-installed tools and libraries that are included in your remote environment.
+
+
+### AI Agent Lab Architecture Diagram
+
+ ![AI Agent Host diagram](./ai-agent-host-diagram.png)
+ 
+:pencil: High resolution diagram [Application architecture diagram](https://raw.githubusercontent.com/BouarfaMahi/AI-Agent-Host/master/ai-agent-host-diagram.png)
