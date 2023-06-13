@@ -51,3 +51,19 @@ Start working with your notebooks and data, using the pre-installed tools and li
  ![AI Agent Host diagram](./ai-agent-host-diagram.png)
  
 :pencil: High resolution diagram [Application architecture diagram](https://raw.githubusercontent.com/BouarfaMahi/AI-Agent-Host/master/ai-agent-host-diagram.png)
+
+
+
+## References
+
+
+- Connect to a JupyterHub from Visual Studio Code. [Jupyter Blog](https://blog.jupyter.org/connect-to-a-jupyterhub-from-visual-studio-code-ed7ed3a31bcb)
+
+- [Visual Studio Code](https://code.visualstudio.com/)
+
+- [QuestDB - The Fastest Open Source Time Series Database](https://questdb.io/)
+
+- [Grafana - The open observability platform](https://grafana.com/)
+
+- [Langchain](https://python.langchain.com)
+
