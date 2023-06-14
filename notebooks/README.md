@@ -17,4 +17,4 @@ The machine learning templates could include but are not limited to:
 
 With this set of ready-to-use notebooks, users can easily experiment with different data sources and machine learning algorithms without having to start from scratch. It will also serve as a valuable resource for those new to data science, providing them with a clear starting point for their experimentation.
 
-We welcome contributions from the community to create and maintain this set of notebooks. Let's work together to make the AI Agent Lab a more powerful tool for data scientists!
+We welcome contributions from the community to create and maintain this set of notebooks. Let's work together to make the AI Agent Host a more powerful tool for data scientists!
