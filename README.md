@@ -1,6 +1,6 @@
 # AI Agent Host
 
-The AI Agent Host is a module-based environment designed to facilitate rapid experimentation and testing. It includes a docker-compose configuration with QuestDB, Grafana, and Code-Server. The AI Agent Host provides a seamless interface for managing and querying data, visualizing results, and coding in real-time.
+The AI Agent Host is a module-based environment designed to facilitate rapid experimentation and testing. It includes a docker-compose configuration with QuestDB, Grafana, Code-Server and Nginx. The AI Agent Host provides a seamless interface for managing and querying data, visualizing results, and coding in real-time.
 
 The AI Agent Host is built specifically for `LangChain`, a framework dedicated to developing applications powered by language models. LangChain recognizes that the most powerful and distinctive applications go beyond simply utilizing a language model and strive to be data-aware and agentic. Being `data-aware` involves connecting a language model to other sources of data, enabling a comprehensive understanding and analysis of information. Additionally, being `agentic` allows a language model to actively interact with its environment. The AI Agent Host aligns with these principles and serves as a framework that supports LangChain's vision, providing a module-based environment for seamless data management, visualization, and real-time coding, thereby empowering developers to create advanced language model-driven applications.
 
@@ -11,6 +11,8 @@ The AI Agent Host is built specifically for `LangChain`, a framework dedicated t
 2. **Grafana**: Grafana is a popular open-source platform for data visualization and monitoring. It provides a rich set of features for creating interactive dashboards and visualizing data from various sources.
 
 3. **Code-Server**: Code-Server is a web-based IDE based on Visual Studio Code. It provides a familiar coding environment with features such as code completion, syntax highlighting, and debugging capabilities.
+
+4. **Nginx: Nginx** is a widely-used web server and reverse proxy server. It enhances the AI Agent Host by providing additional functionality for routing and load balancing, improving performance and security
 
 ## Getting Started
 
