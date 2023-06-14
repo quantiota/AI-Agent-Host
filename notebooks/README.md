@@ -1,6 +1,6 @@
 Currently, the AI Agent Host  provides a seamless interface for managing and querying data, visualizing results, and coding in real-time. However, it would be highly beneficial to have a set of ready-to-use notebooks that we can use with the AI Agent Host, specifically in the field of data science.
 
-Therefore, we propose creating a set of data streams processing notebooks with corresponding machine learning notebooks to be used with the AI Agent Lab. These notebooks will provide users with a variety of data sources to choose from and machine learning templates to work with, making it easier to start experimenting with in the field of data science.
+Therefore, we propose creating a set of data streams processing notebooks with corresponding machine learning notebooks to be used with the AI Agent Host. These notebooks will provide users with a variety of data sources to choose from and machine learning templates to work with, making it easier to start experimenting with in the field of data science.
 
 The available data sources could include but are not limited to:
 
