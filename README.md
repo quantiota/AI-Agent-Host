@@ -12,7 +12,7 @@ The AI Agent Host is built specifically for `LangChain`, a framework dedicated t
 
 3. **Code-Server**: Code-Server is a web-based IDE based on Visual Studio Code. It provides a familiar coding environment with features such as code completion, syntax highlighting, and debugging capabilities.
 
-4. **Nginx: Nginx** is a widely-used web server and reverse proxy server. It enhances the AI Agent Host by providing additional functionality for routing and load balancing, improving performance and security
+4. **Nginx**: Nginx is a widely-used web server and reverse proxy server. It enhances the AI Agent Host by providing additional functionality for routing and load balancing, improving performance and security
 
 ## Getting Started
 
