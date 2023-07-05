@@ -159,7 +159,7 @@
           }
         }
       ],
-      "title": "ETH ",
+      "title": "ETH-USD ",
       "type": "timeseries"
     },
     {
@@ -308,11 +308,11 @@
           }
         }
       ],
-      "title": "ETH ",
+      "title": "ETH-USD ",
       "type": "timeseries"
     }
   ],
-  "refresh": "5s",
+  "refresh": "30s",
   "schemaVersion": 37,
   "style": "dark",
   "tags": [],
