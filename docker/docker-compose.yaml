@@ -55,13 +55,12 @@ services:
       - grafana
       - questdb
 
-  # docker compose run certbot certonly  <--- initial setup certs
-  # docker compose run certbot renew     <--- add this in in crontab
+  # Refer to ./init.yaml to for initial SSL setup
+  # add the following line in in crontab (5 am, every monday)
+  #   0 5 * * 1 docker compose run certbot renew
   certbot:
     image: certbot/certbot
-    #ports:
-    #  - "80:80"
-    #  - "443:443"
+    ports: []
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
       - /var/lib/letsencrypt:/var/lib/letsencrypt
