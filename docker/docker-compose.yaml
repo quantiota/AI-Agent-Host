@@ -59,7 +59,9 @@ services:
   # docker compose run certbot renew     <--- add this in in crontab
   certbot:
     image: certbot/certbot
-    ports: []
+    #ports:
+    #  - "80:80"
+    #  - "443:443"
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
       - /var/lib/letsencrypt:/var/lib/letsencrypt
