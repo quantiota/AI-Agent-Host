@@ -60,7 +60,7 @@ Also, remember to periodically renew your certificates, as Let's Encrypt's certi
 
 
 ```
-# /etc/cron.d/certbot: crontab entries for the certbot package 
+# /etc/cron.d/certbot: crontab entries for the certbot package (5 am, every monday)
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
