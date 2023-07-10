@@ -58,6 +58,16 @@ Please note that the **certonly** command will obtain the certificate but not in
 
 Also, remember to periodically renew your certificates, as Let's Encrypt's certificates expire every 90 days. You can automate this task by setting up a cron job or using a similar task scheduling service.
 
+
+```
+# /etc/cron.d/certbot: crontab entries for the certbot package 
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+ 0 5 * * 1 docker compose run certbot renew
+
+```
+
 ### 2 Setup Environment Variables
 
 Firstly, you will want to create an .env file in the docker folder with the following variables:
