@@ -46,7 +46,7 @@ You can add set the password adding the environment variable `GF_SECURITY_ADMIN_
 
 We will use the Certbot Docker image to generate certificates. This service will bind on ports 80 and 443, which are the standard HTTP and HTTPS ports, respectively. It will also bind mount some directories for persistent storage of certificates and challenge responses. 
 
-you can run the following command to obtain your certificates for each subdomain:
+If you want to obtain separate certificates for each subdomain, you will need to run the **certbot certonly** command for each one. You can specify the subdomain for which you want to obtain a certificate with the -d option, like this:
 
 ```
 docker-compose -f init.yaml run certbot certonly -d vscode.yourdomain.tld
@@ -120,4 +120,4 @@ After completing these steps, you can bring up the Docker stack using the follow
 ```
 docker-compose up
 ```
-This will start all services as defined in your **docker-compose.yml** file.
+This will start all services as defined in your **docker-compose.yaml** file.
