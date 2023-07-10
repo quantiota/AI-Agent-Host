@@ -48,10 +48,13 @@ You can add set the password adding the environment variable `GF_SECURITY_ADMIN_
 First, you will want to create an .env file in the docker folder with the following variables:
 
 ```
+DOMAIN=yourdomain.tld
+
 PASSWORD=yourpassword
 GRAFANA_QUESTDB_PASSWORD=quest
 QDB_PG_USER=admin
 QDB_PG_PASSWORD=quest
+
 ```
 Remember to replace the values of the variables with your actual passwords and usernames. 
 
