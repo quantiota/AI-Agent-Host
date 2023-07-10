@@ -42,8 +42,21 @@ You can add set the password adding the environment variable `GF_SECURITY_ADMIN_
 ## Usage
 
 
+### 1 Generate Certificates with Certbot
 
-### 1 Setup Environment Variables
+We will use the Certbot Docker image to generate certificates. This service will bind on ports 80 and 443, which are the standard HTTP and HTTPS ports, respectively. It will also bind mount some directories for persistent storage of certificates and challenge responses. 
+
+you can run the following command to obtain your certificates:
+
+```
+docker-compose -f init.yaml run certbot certonly
+
+```
+Please note that the **certonly** command will obtain the certificate but not install it. You will have to configure your Nginx service to use the certificate. Additionally, make sure that your domain points to the server on which you're running this setup, as Let's Encrypt validates domain ownership by making an HTTP request.
+
+Also, remember to periodically renew your certificates, as Let's Encrypt's certificates expire every 90 days. You can automate this task by setting up a cron job or using a similar task scheduling service.
+
+### 2 Setup Environment Variables
 
 Firstly, you will want to create an .env file in the docker folder with the following variables:
 
@@ -66,7 +79,7 @@ envsubst '$DOMAIN' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d
 
 Then, you should create a script that runs envsubst to substitute the values and outputs the final Nginx configuration file:
 
-### 2 Generate dhparam.pem file
+### 3 Generate dhparam.pem file
 
 The **dhparam.pem** file is used for Diffie-Hellman key exchange, which is part of establishing a secure TLS connection. You can generate it with OpenSSL. Here's how to generate a 2048-bit key:
 
@@ -76,7 +89,7 @@ openssl dhparam -out ./nginx/certs/dhparam.pem 2048
 
 Generating a dhparam file can take a long time. For a more secure (but slower) 4096-bit key, simply replace 2048 with 4096 in the above command.
 
-### 3 Generate .htpasswd file
+### 4 Generate .htpasswd file
 
 The **.htpasswd** file is used for basic HTTP authentication. You can create it using the **htpasswd** utility, which is part of the Apache HTTP Server package. Here's how to create an **.htpasswd** file with a user named **yourusername**:
 ```
