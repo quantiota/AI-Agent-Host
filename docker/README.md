@@ -79,8 +79,6 @@ envsubst '$DOMAIN' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d
 
 ```
 
-Then, you should create a script that runs envsubst to substitute the values and outputs the final Nginx configuration file:
-
 ### 3 Generate dhparam.pem file
 
 The **dhparam.pem** file is used for Diffie-Hellman key exchange, which is part of establishing a secure TLS connection. You can generate it with OpenSSL. Here's how to generate a 2048-bit key:
