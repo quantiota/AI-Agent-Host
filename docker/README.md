@@ -64,7 +64,7 @@ Also, remember to periodically renew your certificates, as Let's Encrypt's certi
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
- 0 5 * * 1 docker compose run certbot renew
+ 0 5 * * 1 docker-compose run certbot renew
 
 ```
 
