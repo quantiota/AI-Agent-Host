@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+
+  # docker-compose -f init.yaml run certbot certonly
+  certbot:
+    image: certbot/certbot
+    ports:
+      - “80:80”
+      - “443:443”
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+      - ./nginx/.well-known/:/usr/share/nginx/html/.well-known/
