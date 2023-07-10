@@ -99,7 +99,7 @@ openssl dhparam -out ./nginx/certs/dhparam.pem 2048
 
 Generating a dhparam file can take a long time. For a more secure (but slower) 4096-bit key, simply replace 2048 with 4096 in the above command.
 
-### 4 Generate .htpasswd file
+### 4 Generate .htpasswd file for QuestDB 
 
 The **.htpasswd** file is used for basic HTTP authentication. You can create it using the **htpasswd** utility, which is part of the Apache HTTP Server package. Here's how to create an **.htpasswd** file with a user named **yourusername**:
 ```
