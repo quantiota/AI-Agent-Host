@@ -45,20 +45,19 @@ You can add set the password adding the environment variable `GF_SECURITY_ADMIN_
 
 ### 1 Setup Environment Variables
 
-First, you will want to create an .env file in the docker folder with the following variables:
+Firstly, you will want to create an .env file in the docker folder with the following variables:
 
 ```
 DOMAIN=yourdomain.tld
-
 PASSWORD=yourpassword
 GRAFANA_QUESTDB_PASSWORD=quest
 QDB_PG_USER=admin
 QDB_PG_PASSWORD=quest
 
 ```
-Remember to replace the values of the variables with your actual passwords and usernames. 
+Remember to replace the placeholders with your actual domain, passwords, and usernames.
 
-Second, run the command **envsubst** to substitute the values and outputs the final Nginx configuration file:
+Secondly, run the **envsubst** command to substitute the values from the **.env** file into your Nginx configuration file:
 
 ```
 envsubst '$DOMAIN' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf
@@ -75,7 +74,7 @@ The **dhparam.pem** file is used for Diffie-Hellman key exchange, which is part 
 openssl dhparam -out ./nginx/certs/dhparam.pem 2048
 ```
 
-Please note that generating a dhparam file can take a long time. For a more secure (but slower) 4096-bit key, simply replace 2048 with 4096
+Generating a dhparam file can take a long time. For a more secure (but slower) 4096-bit key, simply replace 2048 with 4096 in the above command.
 
 ### 3 Generate .htpasswd file
 
@@ -93,8 +92,9 @@ sudo apt-get install apache2-utils
 ``````
 
 
-You can up the stack using the command:
+After completing these steps, you can bring up the Docker stack using the following command:
 
 ```
 docker-compose up
 ```
+This will start all services as defined in your **docker-compose.yml** file.
