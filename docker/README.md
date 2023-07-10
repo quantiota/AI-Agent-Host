@@ -53,10 +53,34 @@ QDB_PG_PASSWORD=quest
 ```
 Remember to replace the values of the variables with your actual passwords and usernames. 
 
+### 2 Generate dhparam.pem file
+
+The **dhparam.pem** file is used for Diffie-Hellman key exchange, which is part of establishing a secure TLS connection. You can generate it with OpenSSL. Here's how to generate a 2048-bit key:
+
+```
+openssl dhparam -out ./nginx/certs/dhparam.pem 2048
+```
+
+Please note that generating a dhparam file can take a long time. For a more secure (but slower) 4096-bit key, simply replace 2048 with 4096
+
+### 3 Generate .htpasswd file
+
+The **.htpasswd** file is used for basic HTTP authentication. You can create it using the **htpasswd** utility, which is part of the Apache HTTP Server package. Here's how to create an **.htpasswd** file with a user named **yourusername**:
+```
+htpasswd -c ./nginx/.htpasswd yourusername
+```
+This command will prompt you for the password for **yourusername**. The **-c** flag tells **htpasswd** to create a new file. **Caution**: Using the **-c** flag will overwrite any existing **.htpasswd** file.
+
+If **htpasswd** is not installed on your system, you can install it with **apt** on Ubuntu:
+
+``````
+sudo apt-get install apache2-utils
+
+``````
 
 
 You can up the stack using the command:
 
-```bash
+```
 docker-compose up
 ```
