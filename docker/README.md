@@ -41,6 +41,8 @@ You can add set the password adding the environment variable `GF_SECURITY_ADMIN_
 
 ## Usage
 
+
+
 ### 1 Setup Environment Variables
 
 First, you will want to create an .env file in the docker folder with the following variables:
