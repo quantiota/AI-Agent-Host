@@ -26,20 +26,26 @@ git clone https://github.com/BouarfaMahi/AI-Agent-Host.git
 cd AI-Agent-Host/docker
 
 ```
-3. Launch the AI Agent Host using the provided docker-compose configuration.
+
+3. Follow all prerequisite steps that should be completed before running Docker Compose.
+
+Check the Docker [README](https://github.com/BouarfaMahi/AI-Agent-Host/tree/main/docker) file
+
+
+4. Launch the AI Agent Host using the provided docker-compose configuration.
 
 ```
 docker-compose up -d
 
 ```
 
-4. Once the services are up and running, you can access the AI Agent Host interfaces:
+5. Once the services are up and running, you can access the AI Agent Host interfaces:
 
 - QuestDB: Visit https://questdb.domain.tld in your web browser.
 - Grafana: Visit https://grafana.domain.tld in your web browser.
 - Code-Server: Visit https://vscode.domain.tld in your web browser.
 
-5. To connect the AI Agent Host to a remote JupyterHub environment from Code-Server:
+6. To connect the AI Agent Host to a remote JupyterHub environment from Code-Server:
 
 - Set up or use an existing remote JupyterHub that includes the necessary dependencies for working with your notebooks and data.
 
