@@ -50,7 +50,6 @@ If you want to obtain separate certificates for each subdomain, you will need to
 
 ```
 docker-compose -f init.yaml run certbot certonly -d vscode.yourdomain.tld
-
 ```
 
 
