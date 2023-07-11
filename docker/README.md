@@ -82,12 +82,7 @@ QDB_PG_PASSWORD=quest
 ```
 Remember to replace the placeholders with your actual domain, passwords, and usernames.
 
-Secondly, run the **envsubst** command to substitute the values from the **.env** file into your Nginx configuration file:
-
-```
-envsubst '$DOMAIN' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf
-
-```
+The environment variables, specifically ${DOMAIN}, will be replaced directly within the Nginx configuration file when the Docker services are started.
 
 ### 3 Generate dhparam.pem file
 
