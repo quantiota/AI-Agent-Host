@@ -100,7 +100,7 @@ The **.htpasswd** file is used for basic HTTP authentication. You can create it 
 ```
 htpasswd -c ./nginx/.htpasswd yourusername
 ```
-This command will prompt you for the password for **yourusername**. The **-c** flag tells **htpasswd** to create a new file. **Caution**: Using the **-c** flag will overwrite any existing **.htpasswd** file.
+This command will prompt you for the password for **yourusername**. The **-c** flag tells **htpasswd** to create a new file. **Caution**: Using the **-c** flag will overwrite any existing **.htpasswd** file. The user/password are the default one: admin:admin
 
 If **htpasswd** is not installed on your system, you can install it with **apt** on Ubuntu:
 
