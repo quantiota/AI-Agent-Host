@@ -98,7 +98,7 @@ Generating a dhparam file can take a long time. For a more secure (but slower) 4
 
 The user/password are the default one: admin:admin
 
-The **.htpasswd** file is used for basic HTTP authentication. You can create it using the **htpasswd** utility, which is part of the Apache HTTP Server package. Here's how to create an **.htpasswd** file with a user named **yourusername**:
+The **.htpasswd** file is used for basic HTTP authentication. You can change it using the **htpasswd** utility, which is part of the Apache HTTP Server package. Here's how to create an **.htpasswd** file with a user named **yourusername**:
 ```
 htpasswd -c ./nginx/.htpasswd yourusername
 ```
