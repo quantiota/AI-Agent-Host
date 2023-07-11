@@ -64,7 +64,7 @@ Also, remember to periodically renew your certificates, as Let's Encrypt's certi
 SHELL=/bin/sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
- 0 5 * * 1 docker-compose run certbot renew
+ 0 5 * * 1 docker compose run certbot renew
 
 ```
 
@@ -115,6 +115,6 @@ sudo apt-get install apache2-utils
 After completing these steps, you can bring up the Docker stack using the following command:
 
 ```
-docker-compose up
+docker compose up
 ```
 This will start all services as defined in your **docker-compose.yaml** file.
