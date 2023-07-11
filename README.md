@@ -35,7 +35,7 @@ Check the Docker [README](https://github.com/BouarfaMahi/AI-Agent-Host/tree/main
 4. Launch the AI Agent Host using the provided docker-compose configuration.
 
 ```
-docker-compose up -d
+docker compose up -d
 
 ```
 
