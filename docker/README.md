@@ -49,17 +49,17 @@ We will use the Certbot Docker image to generate certificates. This service will
 If you want to obtain separate certificates for each subdomain, you will need to run the **certbot certonly** command for each one. You can specify the subdomain for which you want to obtain a certificate with the -d option, like this:
 
 ```
-docker-compose -f init.yaml run certbot certonly -d vscode.yourdomain.tld
+docker compose -f init.yaml run certbot certonly -d vscode.yourdomain.tld
 ```
 
 
 ```
-docker-compose -f init.yaml run certbot certonly -d questdb.yourdomain.tld
+docker compose -f init.yaml run certbot certonly -d questdb.yourdomain.tld
 ```
 
 
 ```
-docker-compose -f init.yaml run certbot certonly -d grafana.yourdomain.tld
+docker compose -f init.yaml run certbot certonly -d grafana.yourdomain.tld
 ```
 Please note that the **certonly** command will obtain the certificate but not install it. You will have to configure your Nginx service to use the certificate. Additionally, make sure that your domain points to the server on which you're running this setup, as Let's Encrypt validates domain ownership by making an HTTP request.
 
