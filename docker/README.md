@@ -96,11 +96,13 @@ Generating a dhparam file can take a long time. For a more secure (but slower) 4
 
 ### 4 Generate .htpasswd file for QuestDB 
 
+The user/password are the default one: admin:admin
+
 The **.htpasswd** file is used for basic HTTP authentication. You can create it using the **htpasswd** utility, which is part of the Apache HTTP Server package. Here's how to create an **.htpasswd** file with a user named **yourusername**:
 ```
 htpasswd -c ./nginx/.htpasswd yourusername
 ```
-This command will prompt you for the password for **yourusername**. The **-c** flag tells **htpasswd** to create a new file. **Caution**: Using the **-c** flag will overwrite any existing **.htpasswd** file. The user/password are the default one: admin:admin
+This command will prompt you for the password for **yourusername**. The **-c** flag tells **htpasswd** to create a new file. **Caution**: Using the **-c** flag will overwrite any existing **.htpasswd** file. 
 
 If **htpasswd** is not installed on your system, you can install it with **apt** on Ubuntu:
 
