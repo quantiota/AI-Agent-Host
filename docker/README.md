@@ -122,6 +122,6 @@ sudo apt-get install apache2-utils
 After completing these steps, you can bring up the Docker stack using the following command:
 
 ```
-docker compose up
+docker compose up --build -d
 ```
 This will start all services as defined in your **docker-compose.yaml** file.
