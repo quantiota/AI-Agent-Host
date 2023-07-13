@@ -80,16 +80,20 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 Firstly, you will want to create an .env file in the docker folder with the following variables:
 
 ```
-DOMAIN=yourdomain.tld
+# VSCode
 PASSWORD=yourpassword
+
+# Grafana
 GRAFANA_QUESTDB_PASSWORD=quest
+
+# QuestDB
 QDB_PG_USER=admin
 QDB_PG_PASSWORD=quest
 
 ```
 Remember to replace the placeholders with your actual domain, passwords, and usernames.
 
-The environment variables, specifically ${DOMAIN}, will be replaced directly within the Nginx configuration file when the Docker services are started.
+The environment variables will be replaced directly within the Nginx configuration file when the Docker services are started.
 
 ### 3 Generate dhparam.pem file
 
