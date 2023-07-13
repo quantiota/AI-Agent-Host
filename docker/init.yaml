@@ -5,9 +5,7 @@ services:
   # docker-compose -f init.yaml run certbot certonly
   certbot:
     image: certbot/certbot
-    ports:
-      - "80:80"
-      - "443:443"
+    network-mode: host
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
       - /var/lib/letsencrypt:/var/lib/letsencrypt
