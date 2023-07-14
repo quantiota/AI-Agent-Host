@@ -80,6 +80,9 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 Firstly, you will want to create an .env file in the docker folder with the following variables:
 
 ```
+# Domain
+DOMAIN=yourdomain
+
 # VSCode
 PASSWORD=yourpassword
 
@@ -91,7 +94,7 @@ QDB_PG_USER=admin
 QDB_PG_PASSWORD=quest
 
 ```
-Remember to replace the placeholders with your actual passwords, and usernames.
+Remember to replace the placeholders with your actual domain, passwords, and usernames.
 
 The environment variables will be replaced directly within the Nginx configuration file when the Docker services are started.
 
