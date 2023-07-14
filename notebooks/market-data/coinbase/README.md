@@ -16,7 +16,18 @@ end
 ```
 
 
+ If you are using JupyterHub on a remote server, you'll need to configure port forwarding on the server itself or on any intermediate network devices (e.g., router, firewall).
 
+- **Server-level port forwarding**: Configure port forwarding on the server to forward incoming connections on port 9009 to the Docker host's IP address and port 9009.
+
+- **Network device port forwarding**: If there are intermediate network devices between the client and the Docker host, configure port forwarding on those devices to route traffic from the desired source IP and port to the Docker host's IP and port 9009.
+
+Test the port forwarding: After configuring the port forwarding, you can test it by attempting to connect to the Docker host's IP address on port 9009 from a client machine. For example:
+
+```
+telnet docker_host_ip_address 9009
+
+```
 
 ## SQL Query for Real-Time Analytics and Aggregations on Trades Table in QuestDB
 SQL query written for QuestDB, a relational database management system designed for high-performance querying and real-time analytics. The query selects various columns from a "trades" table, including the timestamp, price, and size, and performs aggregations such as finding the first and last prices and sizes, as well as calculating the percentage change. The WHERE clause filters the results to only include trades for the "ETH-USD" symbol with a timestamp within the last day. The query also samples the results at 1-minute intervals aligned to the calendar. The result set includes columns for the open and close prices, volume, and cosine of the sum of the sizes.
