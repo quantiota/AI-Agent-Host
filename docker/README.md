@@ -61,6 +61,9 @@ docker compose -f init.yaml run certbot certonly -d questdb.yourdomain.tld
 ```
 docker compose -f init.yaml run certbot certonly -d grafana.yourdomain.tld
 ```
+
+**Important:** Replace **'yourdomain.tld'** with your actual domain in the commands above and in the **'docker-compose.yml'** file.
+
 Please note that the **certonly** command will obtain the certificate but not install it. You will have to configure your Nginx service to use the certificate. Additionally, make sure that your domain points to the server on which you're running this setup, as Let's Encrypt validates domain ownership by making an HTTP request.
 
 Also, remember to periodically renew your certificates, as Let's Encrypt's certificates expire every 90 days. You can automate this task by setting up a cron job or using a similar task scheduling service.
