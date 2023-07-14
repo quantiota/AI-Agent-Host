@@ -16,7 +16,7 @@ end
 ```
 
 
- If you are using JupyterHub on a remote server, you'll need to configure port forwarding on the server itself or on any intermediate network devices (e.g., router, firewall).
+ If you are using JupyterHub on a **remote server**, you'll need to configure port forwarding on the server itself or on any intermediate network devices (e.g., router, firewall).
 
 - **Server-level port forwarding**: Configure port forwarding on the server to forward incoming connections on port 9009 to the Docker host's IP address and port 9009.
 
