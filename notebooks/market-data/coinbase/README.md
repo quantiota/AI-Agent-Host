@@ -20,7 +20,7 @@ end
 
 - **Server-level port forwarding**: Configure port forwarding on the server to forward incoming connections on port 9009 to the Docker host's IP address and port 9009.
 
-- **Network device port forwarding**: If there are intermediate network devices between the client and the Docker host, configure port forwarding on those devices to route traffic from the desired source IP and port to the Docker host's IP and port 9009.
+- **Network device port forwarding**: If there are intermediate network devices between the JupyterHub server and the Docker host, configure port forwarding on those devices to route traffic from the desired source IP and port to the Docker host's IP and port 9009.
 
 Test the port forwarding: After configuring the port forwarding, you can test it by attempting to connect to the Docker host's IP address on port 9009 from the JupyterHub server. For example:
 
