@@ -97,7 +97,7 @@ QDB_PG_USER=admin
 QDB_PG_PASSWORD=quest
 
 ```
-and to define your domain in the docker compose file:
+and to define your domain name in the docker compose file:
 
 ```
     environment:
