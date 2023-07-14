@@ -94,9 +94,10 @@ QDB_PG_PASSWORD=quest
 ```
 
 
-Remember to replace the placeholders with your actual passwords, and usernames.
+Remember to replace the placeholders with your actual passwords, and usernames. 
 
-The environment variables will be replaced directly within the Nginx configuration file when the Docker services are started.
+The environment variables will be replaced directly within the docker compose and the Nginx configuration file when the Docker services are started.
+
 
 ### 3 Generate dhparam.pem file
 
