@@ -41,6 +41,8 @@ You can add set the password adding the environment variable `GF_SECURITY_ADMIN_
 
 ## Usage
 
+**Note**: A fully qualified domain is required for running any notebooks from VSCode.
+
 
 ### 1 Generate Certificates with Certbot
 
