@@ -92,11 +92,16 @@ QDB_PG_USER=admin
 QDB_PG_PASSWORD=quest
 
 ```
+and to define your domain in the docker compose file:
 
+```
+    environment:
+      - DOMAIN=yourdomain
+```
 
-Remember to replace the placeholders with your actual passwords, and usernames. 
+Remember to replace the placeholders with your actual domain, passwords, and usernames. 
 
-The environment variables will be replaced directly within the docker compose and the Nginx configuration file when the Docker services are started.
+The environment variables will be replaced directly within the Nginx configuration file when the Docker services are started.
 
 
 ### 3 Generate dhparam.pem file
