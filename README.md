@@ -27,9 +27,7 @@ cd AI-Agent-Host/docker
 
 ```
 
-3. Follow all prerequisite steps that should be completed before running Docker Compose.
-
-   Refer to the Docker [Readme](https://github.com/BouarfaMahi/AI-Agent-Host/tree/main/docker) file for guidance
+3. Follow all prerequisite steps that should be completed before running Docker Compose. Refer to the Docker [Readme](https://github.com/BouarfaMahi/AI-Agent-Host/tree/main/docker) file for guidance
 
 
 4. Launch the AI Agent Host using the provided docker-compose configuration.
