@@ -1,11 +1,8 @@
-version: "3"
-
+version: '3'
 services:
-
-  # docker-compose -f init.yaml run certbot certonly
   certbot:
     image: certbot/certbot
-    network-mode: host
+    network_mode: host
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
       - /var/lib/letsencrypt:/var/lib/letsencrypt
