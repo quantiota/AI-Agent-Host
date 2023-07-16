@@ -18,7 +18,7 @@ end
 
 1. Replace "**docker_host_ip_address**" with the actual IP address of the Docker host where your server is running.
 
-2. Establish a remote JupyterHub connection from code-server:. Refer to this [Tutorial](https://blog.jupyter.org/connect-to-a-jupyterhub-from-visual-studio-code-ed7ed3a31bcb) for guidance and use the provided url
+2. Establish a remote JupyterHub connection from code-server. Refer to this [Tutorial](https://blog.jupyter.org/connect-to-a-jupyterhub-from-visual-studio-code-ed7ed3a31bcb) for guidance and use the provided url
 
 ```
 https://<your-hub-url>/user/<your-hub-user-name>/?token=<your-token>
