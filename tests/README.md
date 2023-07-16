@@ -4,7 +4,7 @@ When testing the AI Agent Host, you can expect several types of test results dep
 
 2. **Connectivity tests**: These tests verify whether the services within your Docker Compose setup can communicate with each other. They ensure that the networking between the containers is properly configured, and the services can interact as intended.
 
-3. **Functional tests**: These tests assess the functionality of the services running within the Docker Compose setup. For example, if you have a web application container, you might test whether it responds correctly to HTTP requests, processes user input, and produces the expected output.
+3. **Functional tests**: These tests assess the functionality of the services running within the Docker Compose setup. For example, if you have a web application container, you might test whether it responds correctly to HTTP requests, processes user input, and produces the expected output. Additionally, you can add the possibility to run notebooks as part of your functional tests. For example, if your Docker Compose setup includes a Jupyter Notebook, you can design tests that execute specific notebook cells or workflows and verify the expected results. This allows you to validate the functionality of your notebooks and ensure that they produce the desired outcomes when running within the Docker Compose environment.
 
 4. **Integration tests**: These tests evaluate how well the different services integrated within your Docker Compose configuration work together. They validate whether the services can cooperate and exchange information or perform complex tasks as expected.
 
