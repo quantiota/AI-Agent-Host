@@ -16,9 +16,9 @@ function save_trades_quest(trades)
 end
 ```
 
-1. Replace "**docker_host_ip_address**" with the actual IP address of the Docker host where your server is running.
+1. Remember to replace "**<docker_host_ip_address>**" with the actual IP address of the Docker host where your server is running.
 
-2. Establish a remote JupyterHub connection from code-server. Refer to this [Tutorial](https://blog.jupyter.org/connect-to-a-jupyterhub-from-visual-studio-code-ed7ed3a31bcb) for guidance and use the provided url
+2. To establish a remote JupyterHub connection from code-server, refer to this [Tutorial](https://blog.jupyter.org/connect-to-a-jupyterhub-from-visual-studio-code-ed7ed3a31bcb) for guidance. Use the provided URL:
 
 ```
 https://<your-hub-url>/user/<your-hub-user-name>/?token=<your-token>
@@ -26,18 +26,20 @@ https://<your-hub-url>/user/<your-hub-user-name>/?token=<your-token>
 
 3. Configure port forwarding.
 
- If you are using JupyterHub on a **remote server**, you'll need to configure port forwarding on the server itself or on any intermediate network devices (e.g., router, firewall).
+ If you are using JupyterHub on a remote server, you'll need to configure port forwarding either on the server itself or on any intermediate network devices, such as routers or firewalls.
 
-- **Server-level port forwarding**: Configure port forwarding on the server to forward incoming connections on port 9009 to the Docker host's IP address and port 9009.
+- **Server-level port forwarding**: Configure port forwarding on the server so that it forwards incoming connections on port 9009 to the Docker host's IP address and the same port (9009).
 
-- **Network device port forwarding**: If there are intermediate network devices between the JupyterHub server and the Docker host, configure port forwarding on those devices to route traffic from the desired source IP and port to the Docker host's IP and port 9009.
+- **Network device port forwarding**: If there are intermediate network devices between the JupyterHub server and the Docker host, configure port forwarding on these devices to route traffic from the desired source IP and port to the Docker host's IP and port (9009).
 
-Test the port forwarding: After configuring the port forwarding, you can test it by attempting to connect to the Docker host's IP address on port 9009 from the JupyterHub server. For example:
+After configuring the port forwarding, you should test it. You can do this by attempting to connect to the Docker host's IP address on port 9009 from the JupyterHub server. For example, you can use the following command:
 
 ```
 telnet docker_host_ip_address 9009
 
 ```
+
+Remember to replace "**<docker_host_ip_address>**" with the actual IP address of the Docker host where your server is running.
 
 
 
