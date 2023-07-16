@@ -16,7 +16,7 @@ function save_trades_quest(trades)
 end
 ```
 
-1. Remember to replace "**<docker_host_ip_address>**" with the actual IP address of the Docker host where your server is running.
+1. Remember to replace **<docker_host_ip_address>** with the actual IP address of the Docker host where your server is running.
 
 2. To establish a remote JupyterHub connection from code-server, refer to this [Tutorial](https://blog.jupyter.org/connect-to-a-jupyterhub-from-visual-studio-code-ed7ed3a31bcb) for guidance. Use the provided URL:
 
@@ -39,7 +39,7 @@ telnet docker_host_ip_address 9009
 
 ```
 
-Remember to replace "**<docker_host_ip_address>**" with the actual IP address of the Docker host where your server is running.
+Remember to replace **docker_host_ip_address** with the actual IP address of the Docker host where your server is running.
 
 
 
