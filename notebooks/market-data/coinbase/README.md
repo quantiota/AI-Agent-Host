@@ -3,6 +3,7 @@ The Julia notebook sets up a producer/consumer pattern to build a cryptocurrency
 
 Set up parameter:
 
+
 ```
 using Sockets
 function save_trades_quest(trades)
@@ -15,6 +16,11 @@ function save_trades_quest(trades)
 end
 ```
 
+1. Replace "**docker_host_ip_address**" with the actual IP address of the Docker host where your server is running.
+
+2. Connect Code-Server to the remote JupyterHub server. Refer to this [Tutorial](https://blog.jupyter.org/connect-to-a-jupyterhub-from-visual-studio-code-ed7ed3a31bcb) for guidance
+
+3. Configure port forwarding.
 
  If you are using JupyterHub on a **remote server**, you'll need to configure port forwarding on the server itself or on any intermediate network devices (e.g., router, firewall).
 
@@ -28,6 +34,9 @@ Test the port forwarding: After configuring the port forwarding, you can test it
 telnet docker_host_ip_address 9009
 
 ```
+
+
+
 
 ## SQL Query for Real-Time Analytics and Aggregations on Trades Table in QuestDB
 SQL query written for QuestDB, a relational database management system designed for high-performance querying and real-time analytics. The query selects various columns from a "trades" table, including the timestamp, price, and size, and performs aggregations such as finding the first and last prices and sizes, as well as calculating the percentage change. The WHERE clause filters the results to only include trades for the "ETH-USD" symbol with a timestamp within the last day. The query also samples the results at 1-minute intervals aligned to the calendar. The result set includes columns for the open and close prices, volume, and cosine of the sum of the sizes.
