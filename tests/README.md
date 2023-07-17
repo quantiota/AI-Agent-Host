@@ -1,3 +1,6 @@
+## How to test
+
+
 When testing the AI Agent Host, you can expect several types of test results depending on the specific aspects you are testing. Here are some common types of test results you might encounter:
 
 1. **Successful deployment**: This result indicates that your Docker Compose configuration successfully deploys and starts all the services defined in your configuration file. It means that the containers are running, and the services are accessible as expected.
