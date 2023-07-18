@@ -18,7 +18,7 @@ The AI Agent Host is built specifically for `LangChain`, a framework dedicated t
 
 To use the AI Agent Host, follow these steps:
 
-1. Set up or use an existing environment with Docker installed.
+1. Set up or use an existing environment with [Docker}(https://github.com/BouarfaMahi/AI-Agent-Farm/tree/master/doc/webapps/docker) installed.
 
 2. Clone the AI Agent Host repository and navigate to the docker directory.
 ```
