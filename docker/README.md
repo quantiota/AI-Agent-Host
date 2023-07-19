@@ -146,7 +146,7 @@ This will start all services as defined in your **docker-compose.yaml** file.
 
 ## Understanding and Managing Docker Permissions in a Docker Stack
 
-### Docker Volumes Permissions 
+### 1 Docker Volumes Permissions 
 
 The Docker Compose configuration mounts the local directory **../notebooks** to **/home/coder/project** inside the **vscode** service using Docker volumes. This is specified in the **volumes** section of the **vscode** service:
 
@@ -169,7 +169,7 @@ If you wish to enforce specific permissions within the container regardless of h
 Another option would be to use an entrypoint script in your Dockerfile that modifies the permissions of the directory when the container starts, but again, be cautious about potential security implications of changing permissions in this way.
 
 
-### Setting Default File and Directory Permissions for Git Clone Operations
+### 2 Setting Default File and Directory Permissions for Git Clone Operations
 
 The permissions for files and directories created by **git clone** are determined by your system's settings, not by Git itself. The most important of these settings is the **umask**, a value that determines the default permissions for newly created files and directories.
 
