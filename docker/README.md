@@ -131,10 +131,9 @@ This command will prompt you for the password for **yourusername**. The **-c** f
 
 If **htpasswd** is not installed on your system, you can install it with **apt** on Ubuntu:
 
-``````
+```
 sudo apt-get install apache2-utils
-
-``````
+```
 
 
 After completing these steps, you can bring up the Docker stack using the following command:
