@@ -63,7 +63,7 @@ Start working with your notebooks and data, using the pre-installed tools and li
 ## References
 
 
-- Connect to a JupyterHub from Visual Studio Code. [Jupyter Blog](https://blog.jupyter.org/connect-to-a-jupyterhub-from-visual-studio-code-ed7ed3a31bcb)
+- Connect to a JupyterHub from Visual Studio Code. [Visual Studio Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_connect-to-a-remote-jupyter-server)
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 
