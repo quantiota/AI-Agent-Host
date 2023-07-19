@@ -146,7 +146,7 @@ This will start all services as defined in your **docker-compose.yaml** file.
 
 ## Understanding and Managing Docker Permissions in a Docker Stack
 
-### Docker Volumes 
+### Docker Volumes Permissions 
 
 The Docker Compose configuration mounts the local directory **../notebooks** to **/home/coder/project** inside the **vscode** service using Docker volumes. This is specified in the **volumes** section of the **vscode** service:
 
