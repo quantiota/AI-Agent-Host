@@ -152,7 +152,6 @@ The Docker Compose configuration mounts the local directory **../notebooks** to 
 volumes:
   # volume used to access the `notebooks` folder
   - ../notebooks:/home/coder/project
-
 ``````
 
 However, this configuration doesn't specify any permission settings for the **../notebooks** directory. Therefore, the permissions inside the container for the mounted directory will be the same as the permissions on the host for **../notebooks.**
