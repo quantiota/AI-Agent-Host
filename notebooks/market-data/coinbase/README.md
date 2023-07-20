@@ -18,7 +18,9 @@ end
 
 1. Remember to replace **<docker_host_ip_address>** with the actual IP address of the Docker host where your server is running.
 
-2. To establish a remote JupyterHub connection from code-server, refer to this [Tutorial](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_connect-to-a-remote-jupyter-server) for guidance. Use the provided URL:
+2. Update the jupyter extension to the pre-release version and then click on the reload button.
+
+3. To establish a remote JupyterHub connection from code-server, refer to this [Tutorial](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_connect-to-a-remote-jupyter-server) for guidance. Use the provided URL:
 
 ```
 https://<your-hub-url>/user/<your-hub-user-name>/?token=<your-token>
