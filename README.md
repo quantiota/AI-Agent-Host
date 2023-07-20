@@ -65,9 +65,9 @@ Start working with your notebooks and data, using the pre-installed tools and li
 
 - Connect to a JupyterHub from Visual Studio Code. [Visual Studio Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_connect-to-a-remote-jupyter-server)
 
-- [Visual Studio Code](https://code.visualstudio.com/)
-
 - Create an API Token. [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/howto/rest.html#create-an-api-token)
+
+- [Visual Studio Code](https://code.visualstudio.com/)
 
 - [QuestDB - The Fastest Open Source Time Series Database](https://questdb.io/)
 
