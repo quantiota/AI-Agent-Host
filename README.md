@@ -67,6 +67,8 @@ Start working with your notebooks and data, using the pre-installed tools and li
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 
+- Create an API Token. [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/howto/rest.html#create-an-api-token)
+
 - [QuestDB - The Fastest Open Source Time Series Database](https://questdb.io/)
 
 - [Grafana - The open observability platform](https://grafana.com/)
