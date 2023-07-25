@@ -147,9 +147,9 @@ This will start all services as defined in your **docker-compose.yaml** file.
 
 ### 7 To connect the AI Agent Host to a remote JupyterHub environment from Code-Server:
 
-- Set up or use an existing remote JupyterHub that includes the necessary dependencies for working with your notebooks and data.
+1. Set up or use an existing remote JupyterHub that includes the necessary dependencies for working with your notebooks and data.
 
-- Connect to the remote JupyterHub environment from within the Code-Server interface provided by the AI Agent Host
+2. Connect to the remote JupyterHub environment from within the Code-Server interface provided by the AI Agent Host
 
 Start working with your notebooks and data, using the pre-installed tools and libraries that are included in your remote environment.
 
@@ -159,15 +159,15 @@ Start working with your notebooks and data, using the pre-installed tools and li
 ## References
 
 
-- Connect to a JupyterHub from Visual Studio Code. [Visual Studio Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_connect-to-a-remote-jupyter-server)
+1. Connect to a JupyterHub from Visual Studio Code. [Visual Studio Code](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_connect-to-a-remote-jupyter-server)
 
-- Create an API Token. [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/howto/rest.html#create-an-api-token)
+2. Create an API Token. [JupyterHub](https://jupyterhub.readthedocs.io/en/stable/howto/rest.html#create-an-api-token)
 
-- [Visual Studio Code](https://code.visualstudio.com/)
+3. [Visual Studio Code](https://code.visualstudio.com/)
 
-- [QuestDB - The Fastest Open Source Time Series Database](https://questdb.io/)
+4. [QuestDB - The Fastest Open Source Time Series Database](https://questdb.io/)
 
-- [Grafana - The open observability platform](https://grafana.com/)
+5. [Grafana - The open observability platform](https://grafana.com/)
 
-- [Langchain](https://python.langchain.com)
+6. [Langchain](https://python.langchain.com)
 
