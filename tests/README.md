@@ -32,7 +32,7 @@ git clone https://github.com/quantiota/AI-Agent-Host.git
 cd AI-Agent-Host/docker
 
 ```
-## Usage
+## Prerequisite
 
 **Note**: A **fully qualified domain name**  (FQDN) is mandatory for running any notebooks from VSCode over **HTTPS**.
 
