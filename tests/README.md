@@ -151,7 +151,7 @@ This will start all services as defined in your **docker-compose.yaml** file.
 
 2. Connect to the remote JupyterHub environment from within the Code-Server interface provided by the AI Agent Host
 
-Start working with your notebooks and data, using the pre-installed tools and libraries that are included in your remote environment.
+3. Start working with your notebooks and data, using the pre-installed tools and libraries that are included in your remote environment.
 
 
 
