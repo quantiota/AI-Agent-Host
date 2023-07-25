@@ -137,15 +137,15 @@ docker compose up --build -d
 This will start all services as defined in your **docker-compose.yaml** file.
 
 
+## Usage
 
-
-### 6 Once the services are up and running, you can access the AI Agent Host interfaces:
+### 1 Once the services are up and running, you can access the AI Agent Host interfaces:
 
 - QuestDB: Visit https://questdb.domain.tld in your web browser.
 - Grafana: Visit https://grafana.domain.tld in your web browser.
 - Code-Server: Visit https://vscode.domain.tld in your web browser.
 
-### 7 To connect the AI Agent Host to a remote JupyterHub environment from Code-Server:
+### 2 To connect the AI Agent Host to a remote JupyterHub environment from Code-Server:
 
 1. Set up or use an existing remote JupyterHub that includes the necessary dependencies for working with your notebooks and data.
 
