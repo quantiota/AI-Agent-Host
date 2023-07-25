@@ -154,12 +154,6 @@ This will start all services as defined in your **docker-compose.yaml** file.
 Start working with your notebooks and data, using the pre-installed tools and libraries that are included in your remote environment.
 
 
-### AI Agent Host Architecture Diagram
-
- ![AI Agent Host diagram](./ai-agent-host-diagram.png)
- 
-:pencil: High resolution diagram [Application architecture diagram](https://raw.githubusercontent.com/quantiota/AI-Agent-Host/master/ai-agent-host-diagram.png)
-
 
 
 ## References
