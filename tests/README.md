@@ -152,7 +152,9 @@ This will start all services as defined in your **docker-compose.yaml** file.
 
 2. Connect to the remote JupyterHub environment from within the Code-Server interface provided by the AI Agent Host
 
-3. Start working with your notebooks and data, using the pre-installed tools and libraries that are included in your remote environment.
+### 3 Start working with your notebooks and data, using the pre-installed tools and libraries included in your remote environment.
+
+You can also run the existing notebook in the project folder within VSCode. Follow this [tutorial](https://github.com/quantiota/AI-Agent-Host/tree/main/notebooks/market-data/coinbase) for guidance.
 
 
 
