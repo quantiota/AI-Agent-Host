@@ -46,7 +46,7 @@ Remember to replace **<docker_host_ip_address>** with the actual IP address of t
 
 3. Run the Data Stream Processing Notebook
 
-Click on the 'Run All' button in the toolbar and then check the Grafana dashboard for real-time visualization of market data.
+Click on the '**Run All**' button in the toolbar and then check the Grafana dashboard for real-time visualization of market data.
 
 
 
