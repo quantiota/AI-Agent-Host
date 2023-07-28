@@ -97,11 +97,12 @@ QDB_PG_USER=admin
 QDB_PG_PASSWORD=quest
 
 ```
-and to define your domain name in the docker compose file:
+and to define your domain name in the nginx.env file:
 
 ```
-    environment:
-      - DOMAIN=yourdomain
+     # nginx/nginx.env
+    
+      DOMAIN=yourdomain
 ```
 
 Remember to replace the placeholders with your actual domain, passwords, and usernames. 
