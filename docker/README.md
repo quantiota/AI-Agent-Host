@@ -82,7 +82,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 ### 2 Setup Environment Variables
 
-Firstly, you will want to create an .env file in the docker folder with the following variables:
+Firstly, you will want to create an '**.env**' file in the docker folder with the following variables:
 
 ```
 
@@ -97,7 +97,7 @@ QDB_PG_USER=admin
 QDB_PG_PASSWORD=quest
 
 ```
-and to define your domain name in the nginx.env file:
+and to define your domain name in the '**nginx.env**' file:
 
 ```
      # nginx/nginx.env
