@@ -1,4 +1,4 @@
-FROM codercom/code-server:4.14.1
+FROM codercom/code-server:4.16.1
 
 # Install the extensions
 # https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter
