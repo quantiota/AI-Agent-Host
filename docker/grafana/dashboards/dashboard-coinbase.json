@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 6,
+  "id": 1,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -33,6 +33,7 @@
         "type": "postgres",
         "uid": "2Bi8EToVz"
       },
+      "description": "Coinbase",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -41,8 +42,8 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
+            "axisLabel": "ETH",
+            "axisPlacement": "left",
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 0,
@@ -52,6 +53,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -68,6 +70,7 @@
               "mode": "off"
             }
           },
+          "decimals": 3,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -81,30 +84,37 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "currencyUSD"
         },
         "overrides": [
           {
-            "__systemRef": "hideSeriesFrom",
             "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "open"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
+              "id": "byName",
+              "options": "BTC"
             },
             "properties": [
               {
-                "id": "custom.hideFrom",
+                "id": "custom.axisPlacement",
+                "value": "right"
+              },
+              {
+                "id": "custom.axisLabel",
+                "value": "BTC"
+              },
+              {
+                "id": "custom.axisWidth"
+              },
+              {
+                "id": "color",
                 "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
+                  "fixedColor": "yellow",
+                  "mode": "fixed"
                 }
+              },
+              {
+                "id": "unit",
+                "value": "currencyUSD"
               }
             ]
           }
@@ -124,6 +134,9 @@
           "placement": "bottom",
           "showLegend": true
         },
+        "timezone": [
+          ""
+        ],
         "tooltip": {
           "mode": "single",
           "sort": "none"
@@ -138,8 +151,37 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS open,\r\n    last(price) AS close,\r\n    first(size) AS vopen,\r\n    last(size) AS vclose,\r\n    2*pi()*(last(size) - first(size))/first(size)  AS percentage_change,\r\n    min(price),\r\n    max(price),\r\n    sum(size) AS volume,\r\n    cos(sum(size)) AS cos_volume\r\nFROM trades\r\nWHERE symbol = 'ETH-USD' AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1T ALIGN TO CALENDAR;  ",
+          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS ETH\r\nFROM trades\r\nWHERE symbol = 'ETH-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
           "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "2Bi8EToVz"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS BTC\r\nFROM trades\r\nWHERE symbol = 'BTC-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
+          "refId": "B",
           "sql": {
             "columns": [
               {
@@ -159,7 +201,7 @@
           }
         }
       ],
-      "title": "ETH-USD ",
+      "title": "Price of ETH and  BTC",
       "type": "timeseries"
     },
     {
@@ -175,8 +217,8 @@
           "custom": {
             "axisCenteredZero": false,
             "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
+            "axisLabel": "ETH",
+            "axisPlacement": "left",
             "barAlignment": 0,
             "drawStyle": "line",
             "fillOpacity": 0,
@@ -186,6 +228,7 @@
               "tooltip": false,
               "viz": false
             },
+            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -202,6 +245,7 @@
               "mode": "off"
             }
           },
+          "decimals": 3,
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -215,45 +259,37 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "currencyUSD"
         },
         "overrides": [
           {
-            "__systemRef": "hideSeriesFrom",
             "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "volume"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
+              "id": "byName",
+              "options": "VOLUME"
             },
             "properties": [
               {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "volume"
-            },
-            "properties": [
+                "id": "custom.axisPlacement",
+                "value": "right"
+              },
+              {
+                "id": "custom.axisLabel",
+                "value": "VOLUME"
+              },
+              {
+                "id": "custom.axisWidth"
+              },
               {
                 "id": "color",
                 "value": {
-                  "fixedColor": "orange",
+                  "fixedColor": "light-orange",
                   "mode": "fixed"
                 }
+              },
+              {
+                "id": "unit",
+                "value": "none"
               }
             ]
           }
@@ -273,6 +309,9 @@
           "placement": "bottom",
           "showLegend": true
         },
+        "timezone": [
+          ""
+        ],
         "tooltip": {
           "mode": "single",
           "sort": "none"
@@ -287,8 +326,37 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS open,\r\n    last(price) AS close,\r\n    first(size) AS vopen,\r\n    last(size) AS vclose,\r\n    2*pi()*(last(size) - first(size))/first(size)  AS percentage_change,\r\n    min(price),\r\n    max(price),\r\n    sum(size) AS volume,\r\n    cos(sum(size)) AS cos_volume\r\nFROM trades\r\nWHERE symbol = 'ETH-USD' AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1T ALIGN TO CALENDAR;  ",
+          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS ETH\r\nFROM trades\r\nWHERE symbol = 'ETH-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
           "refId": "A",
+          "sql": {
+            "columns": [
+              {
+                "parameters": [],
+                "type": "function"
+              }
+            ],
+            "groupBy": [
+              {
+                "property": {
+                  "type": "string"
+                },
+                "type": "groupBy"
+              }
+            ],
+            "limit": 50
+          }
+        },
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "2Bi8EToVz"
+          },
+          "editorMode": "code",
+          "format": "table",
+          "hide": false,
+          "rawQuery": true,
+          "rawSql": "SELECT \r\n    timestamp,\r\n    sum(size) AS VOLUME\r\nFROM trades\r\nWHERE symbol = 'ETH-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
+          "refId": "B",
           "sql": {
             "columns": [
               {
@@ -308,25 +376,25 @@
           }
         }
       ],
-      "title": "ETH-USD ",
+      "title": "Price and Volume of ETH ",
       "type": "timeseries"
     }
   ],
-  "refresh": "30s",
-  "schemaVersion": 37,
+  "refresh": "5s",
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-1h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
-  "title": "New dashboard",
+  "title": "Coinbase ETH BTC",
   "uid": "MNhO0-aVk",
-  "version": 6,
+  "version": 52,
   "weekStart": ""
 }
