@@ -1,0 +1,5 @@
+# <- Comment or uncomment based on the application
+
+# some-MarketData-package==x.y.z   <- Comment or uncomment based on the application
+ psycopg2-binary==2.9.7
+ websocket-client==1.6.3
