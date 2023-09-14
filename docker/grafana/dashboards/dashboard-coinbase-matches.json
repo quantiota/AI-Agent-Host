@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 5,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -33,7 +33,7 @@
         "type": "postgres",
         "uid": "2Bi8EToVz"
       },
-      "description": "Coinbase",
+      "description": "Coinbase live data for ETH and BTC",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -53,7 +53,6 @@
               "tooltip": false,
               "viz": false
             },
-            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -146,7 +145,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS ETH\r\nFROM trades\r\nWHERE symbol = 'ETH-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
+          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS ETH\r\nFROM coinbase_matches\r\nWHERE symbol = 'ETH-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
           "refId": "A",
           "sql": {
             "columns": [
@@ -175,7 +174,7 @@
           "format": "table",
           "hide": false,
           "rawQuery": true,
-          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS BTC\r\nFROM trades\r\nWHERE symbol = 'BTC-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
+          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS BTC\r\nFROM coinbase_matches\r\nWHERE symbol = 'BTC-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
           "refId": "B",
           "sql": {
             "columns": [
@@ -223,7 +222,6 @@
               "tooltip": false,
               "viz": false
             },
-            "insertNulls": false,
             "lineInterpolation": "linear",
             "lineWidth": 1,
             "pointSize": 5,
@@ -320,7 +318,7 @@
           "editorMode": "code",
           "format": "table",
           "rawQuery": true,
-          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS ETH\r\nFROM trades\r\nWHERE symbol = 'ETH-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
+          "rawSql": "SELECT \r\n    timestamp,\r\n    first(price) AS ETH\r\nFROM coinbase_matches\r\nWHERE symbol = 'ETH-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
           "refId": "A",
           "sql": {
             "columns": [
@@ -349,7 +347,7 @@
           "format": "table",
           "hide": false,
           "rawQuery": true,
-          "rawSql": "SELECT \r\n    timestamp,\r\n    sum(size) AS VOLUME\r\nFROM trades\r\nWHERE symbol = 'ETH-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
+          "rawSql": "SELECT \r\n    timestamp,\r\n    sum(size) AS VOLUME\r\nFROM coinbase_matches\r\nWHERE symbol = 'ETH-USD'  AND timestamp > dateadd('d', -1, now())\r\nSAMPLE BY 1s ALIGN TO CALENDAR;  ",
           "refId": "B",
           "sql": {
             "columns": [
@@ -377,7 +375,10 @@
   "refresh": "5s",
   "schemaVersion": 38,
   "style": "dark",
-  "tags": [],
+  "tags": [
+    "ETH-USD",
+    "BTC-USD"
+  ],
   "templating": {
     "list": []
   },
@@ -387,8 +388,8 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Coinbase ETH BTC",
-  "uid": "MNhO0-aVk",
-  "version": 58,
+  "title": "Coinbase matches ETH BTC",
+  "uid": "MNhO0-aKv",
+  "version": 3,
   "weekStart": ""
 }
