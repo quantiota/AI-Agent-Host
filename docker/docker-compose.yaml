@@ -10,8 +10,8 @@ services:
     volumes:
       # volume used to access the `notebooks` folder
       - ../notebooks:/home/coder/project
-    environment:
-      - PASSWORD=yourpassword
+    env_file:
+      - .env
 
   grafana:
     image: grafana/grafana:9.5.1
@@ -24,8 +24,8 @@ services:
       - ./grafana/dashboards:/etc/dashboards
     depends_on:
       - questdb
-    environment:
-      - GRAFANA_QUESTDB_PASSWORD=quest
+    env_file:
+      - .env
 
   questdb:
     image: questdb/questdb:7.3
@@ -36,9 +36,8 @@ services:
       - "9003:9003"
     volumes:
       - questdb-data:/root/.questdb
-    environment:
-      - QDB_PG_USER=admin
-      - QDB_PG_PASSWORD=quest
+    env_file:
+      - .env
 
   nginx:
     image: nginx:stable
