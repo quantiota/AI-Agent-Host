@@ -194,7 +194,25 @@ This will start all services as defined in your **docker-compose.yaml** file.
 
 ### 5 **Metric Monitoring with Prometheus**: 
 
-To monitor system metrics like CPU, memory, and disk usage, you can use Prometheus along with the Grafana instance included in your Docker stack. A convenient way to set this up is by importing the **Node Exporter Full** dashboard, which has **ID 1860**, into your Grafana instance. This dashboard provides a comprehensive overview of system metrics collected via the **Prometheus Node Exporter**. Make sure to configure your Prometheus server to scrape metrics from the Node Exporter and connect it to the Grafana instance running in your Docker stack for visualizing these metrics.
+To monitor system metrics like CPU, memory, and disk usage, you can now leverage the fully provisioned Prometheus database and the Node Exporter Full dashboard (ID 1860) within your Grafana instance. This setup provides a comprehensive view of system metrics collected via the Prometheus Node Exporter.
+
+To ensure proper configuration, you need to modify the `prometheus-ip-address` URL in the `prometheus.yml` file as shown below:
+
+```
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus-ip-address:9090
+    isDefault: true
+    editable: false
+    uid: rYdddlPWj  # Ensure this UID is unique, used in the dashboard JSON
+```
+
+Make sure your Prometheus server is configured to scrape metrics from the Node Exporter.
+
 
 
 ## Understanding and Managing Docker Permissions in a Docker Stack
