@@ -183,15 +183,6 @@ sudo apt-get install apache2-utils
 ```
 
 
-After completing these steps, you can bring up the Docker stack using the following command:
-
-```
-docker compose up --build -d
-```
-This will start all services as defined in your **docker-compose.yaml** file.
-
-
-
 ### 5 **Metric Monitoring with Prometheus**: 
 
 To monitor system metrics like CPU, memory, and disk usage, you can now leverage the fully provisioned Prometheus database and the Node Exporter Full dashboard (ID 1860) within your Grafana instance. This setup provides a comprehensive view of system metrics collected via the Prometheus Node Exporter.
@@ -212,6 +203,17 @@ datasources:
 ```
 
 Make sure your Prometheus server is configured to scrape metrics from the Node Exporter.
+
+
+### 6 Launching the Docker Stack and Starting Services
+
+After completing these steps, you can bring up the Docker stack using the following command:
+
+```
+docker compose up --build -d
+```
+This will start all services as defined in your **docker-compose.yaml** file.
+
 
 
 
