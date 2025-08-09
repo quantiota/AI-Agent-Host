@@ -7,6 +7,10 @@ It enables Claude Code to directly interact with Code-Server, QuestDB and Grafan
 
 To apply this integration, replace the corresponding files in the main `docker` directory with the updated versions provided here.
 
+From the  Code-Server web application, run the command `claude` in the terminal and follow the instructions
+
+![Screenshot 3](./screenshot_3.png)
+
 
 ## Why This Environment Is Unique
 
