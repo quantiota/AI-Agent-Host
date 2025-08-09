@@ -63,6 +63,8 @@ Two suggested configurations:
 
 ## Chat with Claude
 
+```
+
 ╭───────────────────────────────────────────────────╮
 │ ✻ Welcome to Claude Code!                         │
 │                                                   │
@@ -71,6 +73,7 @@ Two suggested configurations:
 │   cwd: /home/coder                                │
 ╰───────────────────────────────────────────────────╯
 
+```
  Tips for getting started:
 
  1. Run /init to create a CLAUDE.md file with instructions for Claude
