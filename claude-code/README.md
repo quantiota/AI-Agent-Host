@@ -64,4 +64,4 @@ Two suggested configurations:
 - **RAID Controller**: HP P410/512MB  
 
 **Edge / Low-Power Alternative**
-- Ras
+- Raspberry Pi 4 or Raspberry Pi 5 — suitable for IoT, field deployments, and lightweight agent tasks.
