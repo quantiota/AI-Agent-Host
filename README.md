@@ -51,6 +51,52 @@ docker compose up --build -d
 
 Start working with your notebooks and data, using the pre-installed tools and libraries that are included in your remote environment.
 
+Here’s a small add-on section you can drop into the README (no other parts changed):
+
+---
+
+## Example: Integrating an AI Agent (Claude Code)
+
+This example shows how to add an **AI agent** to the AI Agent Host **without changing** the core stack. The agent runs in its own service and talks **directly** to Code-Server, QuestDB and Grafana over the internal Docker network, preserving the Host’s role as an **agentic environment**.
+
+### Folder Layout
+
+```
+/claude-code/
+├─ Dockerfile
+└─ docker-compose.yaml   # override/extension for the base stack
+```
+
+### What This Adds
+
+* A containerized **Claude Code** service (via `Dockerfile`).
+* A **compose override** (`docker-compose.yaml`) that plugs the agent into the same network as QuestDB, Grafana, and Code-Server.
+
+### Service Discovery (no middleware required)
+
+From the agent container, use service names:
+
+* QuestDB REST: `http://questdb:9000`
+* QuestDB PG wire: `questdb:8812`
+* Grafana API/UI: `http://grafana:3000`
+
+### How to Run (example)
+
+From the `/docker` directory:
+
+```bash
+# Bring up the base stack
+docker compose up -d
+
+# Then start the agent using the override in /docker/claude-code
+docker compose -f docker-compose.yaml -f claude-code/docker-compose.yaml up -d --build
+```
+
+### Notes
+
+* Keep credentials in environment variables or Docker secrets (do **not** hard-code).
+* Grant the agent **least-privilege** DB access (e.g., read-only when possible).
+* This pattern is generic—swap in any agent container while keeping the Host intact.
 
 ### AI Agent Host Architecture Diagram
 
