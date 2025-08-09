@@ -57,8 +57,21 @@ Start working with your notebooks and data, using the pre-installed tools and li
 
 This example shows how to add an **AI agent** to the AI Agent Host **without changing** the core stack. The agent runs in its own service and talks **directly** to Code-Server, QuestDB and Grafana over the internal Docker network, preserving the Host’s role as an **agentic environment**.
 
+### What This Adds
+- Updated `docker/vscode/Dockerfile` to include Claude Code installation.
+- Updated `docker/docker-compose.yaml` to mount persistent config/data volumes for Claude Code.
+
+
 ### Folder Layout
 
+```
+└── 📁claude-code
+    └── 📁docker
+        └── 📁vscode
+            ├── Dockerfile
+        ├── docker-compose.yaml
+    └── README.md
+```
 
 
 ### AI Agent Host Architecture Diagram
