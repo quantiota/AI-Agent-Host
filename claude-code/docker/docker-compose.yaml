@@ -10,6 +10,8 @@ services:
     volumes:
       # volume used to access the `notebooks` folder
       - ../notebooks:/home/coder/project
+      - claude-config:/home/coder/.config/claude-code
+      - claude-data:/home/coder/.claude
     env_file:
       - .env
 
@@ -75,3 +77,5 @@ services:
 volumes:
   grafana-data:
   questdb-data:
+  claude-config:
+  claude-data:
