@@ -62,3 +62,8 @@ Two suggested configurations:
 
 **Edge / Low-Power Alternative**
 - Raspberry Pi 4 or Raspberry Pi 5 — suitable for IoT, field deployments, and lightweight agent tasks.
+
+
+## Screenshot
+
+![Claude Code](screenshot.png)
