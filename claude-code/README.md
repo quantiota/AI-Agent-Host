@@ -93,7 +93,7 @@ Two suggested configurations:
   ⎿  Listed 956 paths (ctrl+r to expand)
 
 ● You're in the /home/coder/project directory which contains numerous machine learning and AI research projects related
-   to SKA (Spatial Knowledge Acquisition) algorithms. The directory includes projects for quantitative finance, neural
+   to SKA (Structured Knowledge Accumulation) algorithms. The directory includes projects for quantitative finance, neural
   networks, genomics, geophysics, and trading algorithms.
 
   What would you like to do with this project?
