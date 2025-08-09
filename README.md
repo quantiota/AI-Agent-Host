@@ -74,7 +74,7 @@ This example shows how to add an **AI agent** to the AI Agent Host **without cha
 ```
 
 
-### AI Agent Host Architecture Diagram
+## AI Agent Host Architecture Diagram
 
  ![AI Agent Host diagram](./ai-agent-host-diagram.png)
  
