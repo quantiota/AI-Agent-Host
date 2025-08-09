@@ -52,9 +52,6 @@ For secure deployments, run the AI Agent Host on a **standalone development box*
 
 Two suggested configurations:
 
-
-### Recommended Hardware
-
 **Dedicated DevBox**
 - **Microserver**: Refurbished HP Microserver Gen8 with quad-core Intel processor and 3 Ethernet ports  
 - **CPU**: quad-core: Xeon E3-1260L, Xeon E3-1265L V2, Xeon E3-1220 V2, Xeon E3-1225 V2, Xeon E3-1230 V2, Xeon E3-1240 V2, Xeon E3-1270 V2  
