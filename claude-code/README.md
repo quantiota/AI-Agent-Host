@@ -52,17 +52,16 @@ For secure deployments, run the AI Agent Host on a **standalone development box*
 
 Two suggested configurations:
 
-**1) Dedicated DevBox**
-- **Model**: Refurbished HP Microserver Gen8 (quad-core Intel, 3 Ethernet ports)
-- **CPU Options**: Xeon E3-1260L, E3-1265L V2, E3-1220 V2, E3-1225 V2, E3-1230 V2, E3-1240 V2, E3-1270 V2
-- **RAM**: 16GB (2x8GB) Dual Rank x8 PC3-12800E (DDR3-1600) Unbuffered CAS-11 (HP part 669324-B21)
-- **Storage**:  
-  - 1 × 250GB Samsung 860 EVO SSD (system & containers)  
-  - 4 × 1TB Western Digital Enterprise HDDs (data storage)
-- **RAID Controller**: HP P410/512MB
 
-**2) Edge / Low-Power**
-- **Model**: Raspberry Pi 4 or Raspberry Pi 5
-- Suitable for IoT, field deployments, and lightweight agent tasks.
+### Recommended Hardware
 
----
+**Dedicated DevBox**
+- **Microserver**: Refurbished HP Microserver Gen8 with quad-core Intel processor and 3 Ethernet ports  
+- **CPU**: quad-core: Xeon E3-1260L, Xeon E3-1265L V2, Xeon E3-1220 V2, Xeon E3-1225 V2, Xeon E3-1230 V2, Xeon E3-1240 V2, Xeon E3-1270 V2  
+- **RAM**: 16GB (2x8GB) Dual Rank x8 PC3-12800E (DDR3-1600) Unbuffered CAS-11 669324-B21  
+- **SSD**: 1 × 250GB Samsung 860 EVO  
+- **HDD**: 4 × 1TB Western Digital Enterprise Storage  
+- **RAID Controller**: HP P410/512MB  
+
+**Edge / Low-Power Alternative**
+- Ras
