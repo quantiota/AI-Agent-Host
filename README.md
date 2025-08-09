@@ -63,7 +63,7 @@ The *agentic* behavior comes from its ability to autonomously chain these basic 
 ### What This Adds
 - Updated `docker/vscode/Dockerfile` to include Claude Code installation.
 - Updated `docker/docker-compose.yaml` to mount persistent config/data volumes for Claude Code.
-
+- instructions `README.md` to run Claude Code
 
 ### Folder Layout
 
