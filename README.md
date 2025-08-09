@@ -53,7 +53,7 @@ Start working with your notebooks and data, using the pre-installed tools and li
 
 
 
-## Example: Integrating an AI Agent (Claude Code)
+## AI Agent Hosting Example: Claude Code
 
 This example shows how to add an **AI agent** to the AI Agent Host **without changing** the core stack. The agent runs in its own service and talks **directly** to Code-Server, QuestDB and Grafana over the internal Docker network, preserving the Host’s role as an **agentic environment**.
 
