@@ -43,9 +43,6 @@ This configuration enables **true autonomous task execution** rather than limite
 
 For maximum isolation and reliability, it is recommended to run the AI Agent Host on **dedicated hardware** rather than sharing resources with other workloads.
 
-
-
-
 ### Recommended Hardware
 
 For secure deployments, run the AI Agent Host on a **standalone development box** that is not shared with other production workloads.  
