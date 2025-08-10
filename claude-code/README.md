@@ -78,6 +78,8 @@ Since AI agents have full system access, use a standalone development box that i
 - **HDD**: 4 × 1TB Western Digital Enterprise Storage  
 - **RAID Controller**: HP P410/512MB  
 
+*This configuration has been tested with the full AI Agent Host stack including QuestDB, Grafana, Claude Code, and all productivity tools.*  
+
 **Edge / Low-Power Alternative**
 - Raspberry Pi 4 or Raspberry Pi 5 — suitable for IoT, field deployments, and lightweight agent tasks.
 
