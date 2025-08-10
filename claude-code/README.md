@@ -64,13 +64,11 @@ This configuration enables **true autonomous task execution** rather than limite
 
 ## Security Guidelines
 
-For maximum isolation and reliability, it is recommended to run the AI Agent Host on **dedicated hardware** rather than sharing resources with other workloads.
+**Run the AI Agent Host on dedicated, isolated hardware only.**
 
-### Recommended Hardware
+Since AI agents have full system access, use a standalone development box that is not shared with other workloads or production systems.
 
-For secure deployments, run the AI Agent Host on a **standalone development box** that is not shared with other production workloads.  
-
-Two suggested configurations:
+### Recommended Hardware Configurations
 
 **Dedicated DevBox**
 - **Microserver**: Refurbished HP Microserver Gen8 with quad-core Intel processor and 3 Ethernet ports  
@@ -90,4 +88,3 @@ Two suggested configurations:
  ![Screenshot 1](./screenshot_1.png)
 
  ![Screenshot 2](./screenshot_2.png)
-
