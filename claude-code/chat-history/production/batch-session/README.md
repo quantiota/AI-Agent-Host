@@ -1,10 +1,10 @@
 # Batch Session Processing
 
-## 📦 **Complete Session Analysis**
+##  **Complete Session Analysis**
 
 Process entire Claude Code conversations after completion for maximum data integrity and parsing accuracy.
 
-### 🚀 **Quick Start Options**
+###  **Quick Start Options**
 
 **Option 1: Automatic (Recommended)**
 ```bash
@@ -18,19 +18,19 @@ Process entire Claude Code conversations after completion for maximum data integ
 # Shows exact parsing command to run after session
 ```
 
-### 📊 **Proven Performance**
+###  **Proven Performance**
 - **272.6 messages/second** insertion rate
 - **100% parsing accuracy** with complete context
 - **Perfect message classification** (user input vs Claude responses)
 
-### 🔧 **Files**
+###  **Files**
 - **`claude_logger_auto.sh`** - Auto-parsing version (recommended)
 - **`claude_logger_docker.sh`** - Manual parsing version
 - **`questdb_inserter_fixed.py`** - Batch session processor
 - **`conversation_parser_clean.py`** - Message classification
 - **`timestamp_utils.py`** - Timing extraction utilities
 
-### ✨ **Batch Benefits**
+###  **Batch Benefits**
 ✅ **Maximum data integrity** with complete conversation context  
 ✅ **Higher parsing accuracy** using full session analysis  
 ✅ **Optimized throughput** with batch processing  
