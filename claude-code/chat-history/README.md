@@ -13,14 +13,14 @@ Traditional AI interactions are **stateless** - each conversation starts from sc
 
 ### The AI Agent Host Advantage
 
-The AI Agent Host's **infrastructure-first approach** uniquely enables persistent memory:
+The AI Agent Host's **infrastructure-first approach** enables persistent memory:
 
 - **QuestDB Integration**: Time-series database perfect for conversation storage
 - **Local Data Control**: All conversations stored on your infrastructure
 - **Real System Access**: AI can correlate conversations with actual system changes
 - **Continuous Learning**: AI improves through experiential learning, not retraining
 
-## The Breakthrough: Experiential AI Learning
+## The Approach: Experiential AI Learning
 
 ### Traditional AI Learning
 ```
@@ -131,7 +131,7 @@ CREATE TABLE chat (
 
 ###  Two Proven Deployment Options
 
-Navigate to the `chat-history/production` folder for complete deployment-ready systems:
+Navigate to the **[production/](production/)** folder for complete deployment-ready systems:
 
 ####  Real-Time Streaming (`production/real-time/`)
 - **Live QuestDB ingestion** as conversations happen
@@ -145,7 +145,7 @@ Navigate to the `chat-history/production` folder for complete deployment-ready s
 - **100% parsing accuracy** with full conversation context
 - **Battle-tested reliability** for stable environments
 
-###  Validated Performance Metrics
+### Validated Performance Metrics
 
 ✅ **29+ conversation messages** processed with 100% accuracy  
 ✅ **Perfect message classification** between user input and AI responses  
@@ -153,26 +153,27 @@ Navigate to the `chat-history/production` folder for complete deployment-ready s
 ✅ **Real-time streaming** at >270 messages/second  
 ✅ **Complete QuestDB integration** with time-series optimization  
 
-###  Proven Results
+### Proven Results
 
 - **Knowledge Accumulation Working**: AI successfully references previous conversation data
 - **Session Continuity**: Multiple conversations properly stored and retrievable
 - **Project Intelligence**: Automatic categorization and context detection
 - **Production Ready**: Comprehensive error handling and monitoring
 
-###  Quick Start Guide
+### Quick Start Guide
 
 1. **Choose Your Approach**: Navigate to `production/` and select real-time or batch processing
 2. **Run the Logger**: Execute the appropriate script in your chosen folder  
 3. **Start Conversations**: Have Claude Code sessions with automatic QuestDB storage
 4. **Experience Knowledge Accumulation**: Watch AI reference previous conversations
 
-###  Strategic Impact
+### Strategic Impact
 
+**For QuestDB Partnership**: Working demonstration of "Conversation as Telemetry Data" using QuestDB's time-series capabilities
 
-**For AI Industry**: Proven solution to the "AI memory problem" through infrastructure rather than model changes
+**For AI Industry**: Demonstrates a solution to the "AI memory problem" through infrastructure rather than model changes
 
-**For Developers**: Production-ready system that transforms stateless AI into learning, accumulating intelligence
+**For Developers**: Production-ready system that enables stateless AI to become learning, accumulating intelligence
 
 ## Future Enhancements
 
