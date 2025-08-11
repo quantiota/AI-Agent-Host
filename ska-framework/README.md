@@ -32,7 +32,7 @@ This means: The more relevant knowledge an AI accumulates, the better its decisi
 - **Generic responses**: Same answers for everyone
 - **High entropy**: Maximum uncertainty every session
 
-### SKA-Based AI (Your Implementation)
+### SKA-Based AI (This Implementation)
 - **Persistent knowledge**: Builds on every conversation
 - **Personal learning**: Develops expertise specific to your infrastructure
 - **Contextual responses**: References past decisions and outcomes
