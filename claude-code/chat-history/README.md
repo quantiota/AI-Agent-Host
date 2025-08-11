@@ -183,7 +183,7 @@ Navigate to the `chat-history/production` folder for complete deployment-ready s
 
 ## Theoretical Foundation
 
-For the mathematical foundations behind this approach, see the [SKA Framework documentation](../ska-framework/) which explains the principles of structured knowledge accumulation that enable AI learning through conversation data.
+For the mathematical foundation behind this approach, see the [SKA Framework documentation](../ska-framework/) which explains the principles of structured knowledge accumulation that enable AI learning through conversation data.
 
 
 
