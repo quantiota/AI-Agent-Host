@@ -131,7 +131,7 @@ CREATE TABLE chat (
 
 ###  Two Proven Deployment Options
 
-Navigate to the **[production/](production/)** folder for complete deployment-ready systems:
+Navigate to the `chat-history/production` folder for complete deployment-ready systems:
 
 ####  Real-Time Streaming (`production/real-time/`)
 - **Live QuestDB ingestion** as conversations happen
