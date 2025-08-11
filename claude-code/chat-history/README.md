@@ -133,19 +133,19 @@ CREATE TABLE chat (
 
 Navigate to the `chat-history/production` folder for complete deployment-ready systems:
 
-#### ** Real-Time Streaming** (`production/real-time/`)
+####  Real-Time Streaming (`production/real-time/`)
 - **Live QuestDB ingestion** as conversations happen
 - **Immediate knowledge access** - AI references current session context
 - **Fault tolerance** - data preserved if sessions crash
 - **Zero latency** - no waiting for post-processing
 
-#### ** Batch Session Processing** (`production/batch-session/`)  
+####  Batch Session Processing (`production/batch-session/`)  
 - **Complete session analysis** for maximum data integrity
 - **Proven performance** - 272.6 messages/second insertion rate
 - **100% parsing accuracy** with full conversation context
 - **Battle-tested reliability** for stable environments
 
-###  **Validated Performance Metrics**
+###  Validated Performance Metrics
 
 ✅ **29+ conversation messages** processed with 100% accuracy  
 ✅ **Perfect message classification** between user input and AI responses  
@@ -153,21 +153,21 @@ Navigate to the `chat-history/production` folder for complete deployment-ready s
 ✅ **Real-time streaming** at >270 messages/second  
 ✅ **Complete QuestDB integration** with time-series optimization  
 
-###  **Proven Results**
+###  Proven Results
 
 - **Knowledge Accumulation Working**: AI successfully references previous conversation data
 - **Session Continuity**: Multiple conversations properly stored and retrievable
 - **Project Intelligence**: Automatic categorization and context detection
 - **Production Ready**: Comprehensive error handling and monitoring
 
-###  **Quick Start Guide**
+###  Quick Start Guide
 
 1. **Choose Your Approach**: Navigate to `production/` and select real-time or batch processing
 2. **Run the Logger**: Execute the appropriate script in your chosen folder  
 3. **Start Conversations**: Have Claude Code sessions with automatic QuestDB storage
 4. **Experience Knowledge Accumulation**: Watch AI reference previous conversations
 
-###  **Strategic Impact**
+###  Strategic Impact
 
 **For QuestDB Partnership**: First working demonstration of "Conversation as Telemetry Data" using QuestDB's time-series capabilities
 
