@@ -169,7 +169,6 @@ Navigate to the `chat-history/production` folder for complete deployment-ready s
 
 ###  Strategic Impact
 
-**For QuestDB Partnership**: First working demonstration of "Conversation as Telemetry Data" using QuestDB's time-series capabilities
 
 **For AI Industry**: Proven solution to the "AI memory problem" through infrastructure rather than model changes
 
