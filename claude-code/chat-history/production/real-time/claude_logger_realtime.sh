@@ -78,8 +78,7 @@ EOF
     (
         python3 "${SCRIPT_DIR}/questdb_stream_inserter.py" \
             --json-file "$temp_json" \
-            --create-table \
-            >/dev/null 2>&1
+            --create-table
         rm -f "$temp_json"
     ) &
 }
@@ -276,6 +275,15 @@ main() {
     check_prerequisites
     mkdir -p "${CHAT_LOGS_DIR}"
     log_metadata
+    
+    # Create QuestDB table before starting
+    echo -e "${CYAN}🔧 Initializing QuestDB table...${NC}"
+    python3 "${SCRIPT_DIR}/questdb_stream_inserter.py" --create-table --json '{"test":"init"}' || {
+        echo -e "${RED}❌ Failed to initialize QuestDB table${NC}"
+        exit 1
+    }
+    echo -e "${GREEN}✅ QuestDB table ready${NC}"
+    
     show_session_info
     
     # Start real-time monitoring
