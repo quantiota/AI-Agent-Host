@@ -95,6 +95,21 @@ Implement RAID 10 and automated backups to protect against AI agent destructive 
 
   For complete RAID 10 setup and rsnapshot configuration: [Tutorial](https://github.com/quantiota/AI-Agent-Farm/tree/master/doc/it-admin/backup)
 
+  ### System Monitoring
+
+  Monitor AI Agent Host infrastructure with built-in Prometheus and Node Exporter.
+
+  The AI Agent Host includes comprehensive monitoring for security and performance oversight:
+
+  - Node Exporter: System metrics collection (CPU,memory, disk, network)
+  - Prometheus Database: Time-series metric storage and alerting
+  - Grafana Dashboard: Pre-configured Node Exporter Full dashboard (ID 1860)
+
+  Security Monitoring Benefits:
+  - Resource usage tracking: Detect abnormal AI agent resource consumption
+  - System health alerts: Early warning of hardware failures or security issues
+  - Performance baseline: Establish normal operation patterns for anomaly detection
+  - Audit correlation: Cross-reference system metrics with AI conversation logs
 
 
 ### Remote Access Security
