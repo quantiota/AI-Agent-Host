@@ -54,6 +54,7 @@ cd real-time/
 **Option 1: Automatic (Recommended)**
 ```bash
 cd batch-session/
+chmod +x ./claude_logger_auto.sh
 ./claude_logger_auto.sh
 # Auto-parses and stores in QuestDB on session exit
 ```
@@ -61,6 +62,7 @@ cd batch-session/
 **Option 2: Manual**
 ```bash
 cd batch-session/
+chmod +x ./claude_logger_docker.sh
 ./claude_logger_docker.sh
 # Follow displayed command after session ends
 ```
