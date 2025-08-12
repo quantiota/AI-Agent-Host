@@ -185,6 +185,9 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 # Main execution
 main() {
     # Check prerequisites
@@ -195,6 +198,28 @@ main() {
     
     # Log session metadata
     log_metadata
+    
+    # Create QuestDB table before starting
+    echo -e "${BLUE}🔧 Initializing QuestDB table...${NC}"
+    if python3 "${SCRIPT_DIR}/questdb_inserter_fixed.py" \
+        /dev/null /dev/null /dev/null --create-table 2>/dev/null || \
+       python3 -c "
+import sys
+sys.path.append('${SCRIPT_DIR}')
+from questdb_inserter_fixed import QuestDBInserter
+inserter = QuestDBInserter()
+if inserter.connect():
+    success = inserter.create_table_if_not_exists()
+    inserter.disconnect()
+    exit(0 if success else 1)
+else:
+    exit(1)
+"; then
+        echo -e "${GREEN}✅ QuestDB table ready${NC}"
+    else
+        echo -e "${RED}❌ Failed to initialize QuestDB table${NC}"
+        echo -e "${YELLOW}⚠️  Will continue without pre-initialization${NC}"
+    fi
     
     # Show session info
     show_session_info
