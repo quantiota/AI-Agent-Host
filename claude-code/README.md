@@ -79,7 +79,13 @@ Since AI agents have full system access, use a standalone development box that i
 - **RAID Controller**: HP P410/512MB  
 
 
- **Backup and Recovery**
+*This configuration has been tested with the full AI Agent Host stack including QuestDB, Grafana, Claude Code, and all productivity tools.*  
+
+**Edge / Low-Power Alternative**
+- Raspberry Pi 4 or Raspberry Pi 5 — suitable for IoT, field deployments, and lightweight agent tasks.
+
+
+ ## Backup and Recovery
 
 Implement RAID 10 and automated backups to protect against AI agent destructive commands.
 
@@ -91,10 +97,28 @@ Implement RAID 10 and automated backups to protect against AI agent destructive 
 
 
 
-*This configuration has been tested with the full AI Agent Host stack including QuestDB, Grafana, Claude Code, and all productivity tools.*  
+## Remote Access Security
 
-**Edge / Low-Power Alternative**
-- Raspberry Pi 4 or Raspberry Pi 5 — suitable for IoT, field deployments, and lightweight agent tasks.
+  Access AI Agent Host services remotely via HTTPS for enhanced security.
+
+  Remote access to the three core services is strongly recommended over local development:
+
+  - VSCode (Code-Server): https://vscode.yourdomain.tld - Secure web-based IDE
+  - QuestDB: https://questdb.yourdomain.tld - Database management interface
+  - Grafana: https://grafana.yourdomain.tld - Monitoring and analytics dashboard
+
+  Security Benefits:
+
+  - Isolation: AI agents run on dedicated hardware, not personal devices
+  - Encryption: All traffic secured via SSL/TLS certificates
+  - Audit Trail: Complete logging of all AI agent interactions
+  - Recovery: Instant rollback capability protects against destructive commands
+  - Data Protection: Personal and development data remain separate
+
+  Remote access eliminates the security risks of running AI agents on shared personal laptops while
+   providing enterprise-grade development capabilities.
+
+
 
 
 ## Screenshot
