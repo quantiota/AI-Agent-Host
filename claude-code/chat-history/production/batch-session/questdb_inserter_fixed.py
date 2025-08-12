@@ -46,7 +46,6 @@ class QuestDBInserter:
                 password=self.password
             )
             self.connection.autocommit = True
-            print(f"Connected to QuestDB at {self.host}:{self.port}", file=sys.stderr)
             return True
         except Exception as e:
             print(f"Failed to connect to QuestDB: {e}", file=sys.stderr)
@@ -57,7 +56,6 @@ class QuestDBInserter:
         if self.connection:
             self.connection.close()
             self.connection = None
-            print("Disconnected from QuestDB", file=sys.stderr)
     
     def create_table_if_not_exists(self) -> bool:
         """Create the chat table if it doesn't exist"""
@@ -71,14 +69,14 @@ class QuestDBInserter:
             tool_used SYMBOL CAPACITY 100 CACHE,
             file_modified STRING,
             context_tokens INT,
-            response_quality DOUBLE
+            response_quality DOUBLE,
+            streaming BOOLEAN
         ) TIMESTAMP(timestamp) PARTITION BY DAY;
         """
         
         try:
             with self.connection.cursor() as cursor:
                 cursor.execute(create_sql)
-            print("Chat table ready", file=sys.stderr)
             return True
         except Exception as e:
             print(f"Failed to create table: {e}", file=sys.stderr)
@@ -139,8 +137,8 @@ class QuestDBInserter:
         insert_sql = """
         INSERT INTO chat (
             timestamp, session_id, message_type, content, project_tag,
-            tool_used, file_modified, context_tokens, response_quality
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            tool_used, file_modified, context_tokens, response_quality, streaming
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         
         try:
@@ -157,7 +155,8 @@ class QuestDBInserter:
                     message.tool_used,
                     message.file_modified,
                     message.context_tokens,
-                    message.response_quality
+                    message.response_quality,
+                    False  # streaming = False for batch processing
                 ))
             return True, None
         except Exception as e:
@@ -262,31 +261,11 @@ def main():
     parser.add_argument('--verify', action='store_true',
                         help='Verify insertion after completion')
     parser.add_argument('--verbose', '-v', action='store_true', help='Verbose output')
+    parser.add_argument('--quiet', action='store_true', help='Suppress output')
     
     args = parser.parse_args()
     
-    # Parse conversation data
-    if args.verbose:
-        print("Parsing conversation data...", file=sys.stderr)
-    
-    parser_instance = ConversationParser()
-    try:
-        messages = parser_instance.parse_session_to_messages(
-            args.session_log, args.timing_log, args.meta_file
-        )
-        
-        if not messages:
-            print("Error: No messages to insert", file=sys.stderr)
-            return 1
-        
-        if args.verbose:
-            print(f"Parsed {len(messages)} messages", file=sys.stderr)
-            
-    except Exception as e:
-        print(f"Error parsing conversation: {e}", file=sys.stderr)
-        return 1
-    
-    # Initialize QuestDB inserter
+    # Initialize QuestDB inserter first
     inserter = QuestDBInserter(
         host=args.host,
         port=args.port,
@@ -300,16 +279,42 @@ def main():
         return 1
     
     try:
-        # Create table if requested
+        # Create table if requested (independent of log parsing)
         if args.create_table:
             if not inserter.create_table_if_not_exists():
                 return 1
+            # If only creating table, exit successfully
+            if args.session_log == '/tmp/dummy.log':
+                return 0
+    
+        # Parse conversation data only for real sessions
+        if args.verbose and not args.quiet:
+            print("Parsing conversation data...", file=sys.stderr)
+        
+        parser_instance = ConversationParser()
+        try:
+            messages = parser_instance.parse_session_to_messages(
+                args.session_log, args.timing_log, args.meta_file
+            )
+            
+            if not messages:
+                if not args.quiet:
+                    print("Error: No messages to insert", file=sys.stderr)
+                return 1
+            
+            if args.verbose and not args.quiet:
+                print(f"Parsed {len(messages)} messages", file=sys.stderr)
+                
+        except Exception as e:
+            if not args.quiet:
+                print(f"Error parsing conversation: {e}", file=sys.stderr)
+            return 1
         
         # Get session ID for operations
         session_id = messages[0].session_id if messages else 'unknown'
         
         # Insert messages
-        if args.verbose:
+        if args.verbose and not args.quiet:
             print(f"Inserting {len(messages)} messages into QuestDB...", file=sys.stderr)
         
         result = inserter.insert_messages_batch(messages)
@@ -317,19 +322,20 @@ def main():
         # Report results
         stats = inserter.get_insertion_stats()
         
-        print(f"\n✅ Insertion Results:", file=sys.stderr)
-        print(f"  Total processed: {result['total_processed']}", file=sys.stderr)
-        print(f"  Successful: {result['successful_count']}", file=sys.stderr)
-        print(f"  Failed: {result['failed_count']}", file=sys.stderr)
-        print(f"  Duration: {stats.get('duration_seconds', 0):.2f} seconds", file=sys.stderr)
-        print(f"  Rate: {stats.get('messages_per_second', 0):.1f} messages/sec", file=sys.stderr)
+        if not args.quiet:
+            print(f"\n✅ Insertion Results:", file=sys.stderr)
+            print(f"  Total processed: {result['total_processed']}", file=sys.stderr)
+            print(f"  Successful: {result['successful_count']}", file=sys.stderr)
+            print(f"  Failed: {result['failed_count']}", file=sys.stderr)
+            print(f"  Duration: {stats.get('duration_seconds', 0):.2f} seconds", file=sys.stderr)
+            print(f"  Rate: {stats.get('messages_per_second', 0):.1f} messages/sec", file=sys.stderr)
         
         # Verify insertion if requested
         if args.verify:
-            if args.verbose:
+            if args.verbose and not args.quiet:
                 print(f"Verifying insertion for session {session_id}...", file=sys.stderr)
             verification = inserter.verify_insertion(session_id)
-            if verification:
+            if verification and not args.quiet:
                 print(f"\n✅ Verification Results:", file=sys.stderr)
                 for key, value in verification.items():
                     print(f"  {key}: {value}", file=sys.stderr)
