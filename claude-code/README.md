@@ -78,6 +78,21 @@ Since AI agents have full system access, use a standalone development box that i
 - **HDD**: 4 × 1TB Western Digital Enterprise Storage  
 - **RAID Controller**: HP P410/512MB  
 
+
+  ### Backup and Recovery
+
+
+  Implement RAID 10 and automated backups to protect
+   against AI agent destructive commands.
+
+  - RAID 10 Configuration: Use 4 HDDs in RAID 10 for optimal performance and redundancy
+  - rsnapshot Integration: Automated incremental snapshots of critical directories and Docker volumes
+  - Recovery Strategy: Quick rollback capability for AI agent mistakes and system corruption
+
+  For complete RAID 10 setup and rsnapshot configuration: [Tutorial](https://github.com/quantiota/AI-Agent-Farm/tree/master/doc/it-admin/backup)
+
+
+
 *This configuration has been tested with the full AI Agent Host stack including QuestDB, Grafana, Claude Code, and all productivity tools.*  
 
 **Edge / Low-Power Alternative**
