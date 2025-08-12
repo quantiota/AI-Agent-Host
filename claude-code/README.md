@@ -79,7 +79,7 @@ Since AI agents have full system access, use a standalone development box that i
 - **RAID Controller**: HP P410/512MB  
 
 
-### Backup and Recovery
+ **Backup and Recovery**
 
 Implement RAID 10 and automated backups to protect against AI agent destructive commands.
 
