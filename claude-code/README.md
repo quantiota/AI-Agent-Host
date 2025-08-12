@@ -85,7 +85,7 @@ Since AI agents have full system access, use a standalone development box that i
 - Raspberry Pi 4 or Raspberry Pi 5 — suitable for IoT, field deployments, and lightweight agent tasks.
 
 
- ## Backup and Recovery
+ ### Backup and Recovery
 
 Implement RAID 10 and automated backups to protect against AI agent destructive commands.
 
@@ -97,7 +97,7 @@ Implement RAID 10 and automated backups to protect against AI agent destructive 
 
 
 
-## Remote Access Security
+### Remote Access Security
 
   Access AI Agent Host services remotely via HTTPS for enhanced security.
 
