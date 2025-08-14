@@ -3,7 +3,7 @@
 
 ## Architecture Diagram
 
-![Architecture](architecture.png)
+![Architecture](architecture.svg)
 
 This folder contains the files needed to integrate **Claude Code** into the AI Agent Host by extending the existing Code-Server container.  
 
