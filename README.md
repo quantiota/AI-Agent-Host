@@ -85,8 +85,9 @@ The *agentic* behavior comes from its ability to autonomously chain these basic 
 
 ### Core Diagram
 
-![Core diagram](./architecture-host.svg)
- 
+
+<img src="/architecture-host.svg" width="400">
+
 
 ## References
 
