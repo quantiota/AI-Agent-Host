@@ -85,7 +85,7 @@ The *agentic* behavior comes from its ability to autonomously chain these basic 
 
 ### Core Diagram
 
-![Core diagram](./architecture-host-small.png)
+![Core diagram](./architecture-host.svg)
  
 
 ## References
