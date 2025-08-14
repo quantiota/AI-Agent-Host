@@ -83,7 +83,10 @@ The *agentic* behavior comes from its ability to autonomously chain these basic 
  
 :pencil: High resolution diagram [Application architecture diagram](https://raw.githubusercontent.com/quantiota/AI-Agent-Host/master/ai-agent-host-diagram.png)
 
+### Core Diagram
 
+![Core diagram](./architecture-host.png)
+ 
 
 ## References
 
