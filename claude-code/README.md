@@ -1,9 +1,54 @@
 
 # Claude Code Integration for AI Agent Host
 
+```mermaid
+---
+config:
+  look: classic
+  theme: base
+  layout: dagre
+---
+flowchart TD
+    %% External services
+    subgraph "Public Internet"
+        User["User Browser"]:::external
+        JupyterHub["JupyterHub (HTTP API)"]:::external
+    end
 
-![Git Diagram](./gitdiagram.png)
+    %% Docker Host containing all containers
+    subgraph "Docker Host"
+        direction TB
+        Nginx["Nginx (443)"]:::frontend
+        CodeServer["Code-Server (8080)"]:::frontend
+        Grafana["Grafana (3000)"]:::frontend
+        QuestDB["QuestDB (8812)"]:::datastore
+        ClaudeCode["Claude Code Service"]:::agent
+    end
 
+    %% Connections
+    User -->|"HTTPS"| Nginx
+    Nginx -->|"proxy to Code-Server"| CodeServer
+    Nginx -->|"proxy to Grafana"| Grafana
+    Nginx -->|"proxy to QuestDB"| QuestDB
+    CodeServer -->|"calls API"| JupyterHub
+    ClaudeCode -->|"writes logs"| QuestDB
+    ClaudeCode -->|"queries dashboards"| Grafana
+    ClaudeCode -->|"orchestrates via IDE"| CodeServer
+    Grafana -->|"reads data"| QuestDB
+
+    %% Click Events
+    click Nginx "https://github.com/quantiota/ai-agent-host/tree/main/docker/nginx/"
+    click CodeServer "https://github.com/quantiota/ai-agent-host/tree/main/docker/vscode/"
+    click QuestDB "https://github.com/quantiota/ai-agent-host/blob/main/docker/docker-compose.yaml"
+    click Grafana "https://github.com/quantiota/ai-agent-host/tree/main/docker/grafana/"
+    click ClaudeCode "https://github.com/quantiota/ai-agent-host/tree/main/claude-code/"
+
+    %% Styling
+    classDef frontend fill:#bbdefb,stroke:#0d47a1;
+    classDef datastore fill:#c8e6c9,stroke:#1b5e20;
+    classDef agent fill:#e1bee7,stroke:#4a148c;
+    classDef external fill:#eeeeee,stroke:#757575,stroke-dasharray: 5 5;
+```
 
 
 
