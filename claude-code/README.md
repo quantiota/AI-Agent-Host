@@ -3,44 +3,7 @@
 
 ## Architecture Diagram
 
-```mermaid
----
-config:
-  look: classic
-  theme: base
-  layout: elk
----
-graph TD
-subgraph Docker Services
-codeserver["code-server<br>(Port 8080)"]
-grafana["Grafana<br>(Port 3000)"]
-questdb["QuestDB<br>(Port 9000, 9009, 8812, 9003)"]
-nginx["Nginx<br>(Port 80, 443)"]
-certbot["Certbot"]
-aiagent["AI Agent"]
-end
-
-User["User<br>"]
-User -->|Interacts with| nginx
-nginx -->|Routes requests| codeserver
-nginx -->|Routes requests| grafana
-nginx -->|Routes requests| questdb
-aiagent <-->|Queries/Writes data| questdb
-aiagent <-->|Updates dashboards| grafana
-aiagent <-->|Executes code| codeserver
-codeserver -->|Ingests data| questdb
-grafana -->|Queries data| questdb
-certbot -->|Manages SSL Certificates| nginx
-
-%% Layout nudging (still included, may help with ELK)
-aiagent ~~~ codeserver
-aiagent ~~~ grafana
-aiagent ~~~ questdb
-
-classDef toDevelop fill:#f9f,stroke:#333,stroke-width:2px;
-class aiagent toDevelop;
-classDef external fill:#f0f0f0,stroke:#333,stroke-dasharray: 5 5;
-```
+![Architecture](architecture.png)
 
 This folder contains the files needed to integrate **Claude Code** into the AI Agent Host by extending the existing Code-Server container.  
 
