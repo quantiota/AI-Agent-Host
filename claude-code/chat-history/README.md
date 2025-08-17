@@ -150,7 +150,6 @@ We treat **human-AI dialogue as operational telemetry**:
 ## Architecture
 
 ```mermaid
-
 ---
 config:
   look: classic
@@ -166,20 +165,20 @@ flowchart TD
     subgraph "⚡ Real-Time Streaming Path"
         direction TB
         realtime_detect["🔍 Live Message Detection<br/>(Lightweight Classification)"]
-        message_buffer["📦 Message Buffer<br/>(2s timeout / 500 chars)"]
+        message_buffer["📦 Message Buffer<br/>(2s timeout / 500 chars, debounce & merge)"]
         stream_insert["📡 Stream Insert<br/>(Immediate QuestDB)"]
     end
     
     subgraph "🔄 Batch Validation Path"
         direction TB
-        logs["📄 Session Logs<br/>• session.log<br/>• timing.log<br/>• meta.json"]
+        logs["📄 Session Logs<br/>• session.log • timing.log • meta.json"]
         parser["🔬 Full Parse + Timestamp + Classify<br/>(Detailed Analysis)"]
         events["📊 Structured Events<br/>(JSON/CSV)"]
-        validate["✅ Integrity Check<br/>& Gap Recovery"]
+        validate["✅ Integrity Check & Gap Recovery<br/>(idempotent upsert)"]
     end
     
     %% Database and Intelligence
-    questdb[("🗄️ QuestDB<br/>chat table<br/>Time-series optimized")]
+    questdb[("🗄️ QuestDB<br/>chat/events tables<br/>Time-series optimized")]
     grafana["📈 Grafana Dashboards<br/>Real-time Analysis"]
     ska["🧠 SKA Framework<br/>Knowledge Accumulation"]
     
