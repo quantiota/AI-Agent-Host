@@ -27,6 +27,7 @@ production/
 ###  **Usage:**
 ```bash
 cd real-time/
+chmod +x ./claude_logger_realtime.sh
 ./claude_logger_realtime.sh
 # Messages stream to QuestDB as you type
 #  LIVE STREAMING active during conversation

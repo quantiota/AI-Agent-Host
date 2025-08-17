@@ -6,6 +6,7 @@ Stream Claude Code conversations to QuestDB as they happen - no waiting, no dela
 
 ### Quick Start
 ```bash
+chmod +x ./claude_logger_realtime.sh
 ./claude_logger_realtime.sh
 ```
 
