@@ -149,6 +149,74 @@ We treat **human-AI dialogue as operational telemetry**:
 
 ## Architecture
 
+```mermaid
+
+---
+config:
+  look: classic
+  theme: base
+  layout: elk
+---
+flowchart TD
+    %% Input Layer
+    terminal["🖥️ Terminal Session<br/>(Claude Code)"]
+    raw["Raw Data:<br/>• Keystrokes<br/>• Screen Output<br/>• Commands"]
+    
+    %% Dual Processing Paths
+    subgraph "⚡ Real-Time Streaming Path"
+        direction TB
+        realtime_detect["🔍 Live Message Detection<br/>(Lightweight Classification)"]
+        message_buffer["📦 Message Buffer<br/>(2s timeout / 500 chars)"]
+        stream_insert["📡 Stream Insert<br/>(Immediate QuestDB)"]
+    end
+    
+    subgraph "🔄 Batch Validation Path"
+        direction TB
+        logs["📄 Session Logs<br/>• session.log<br/>• timing.log<br/>• meta.json"]
+        parser["🔬 Full Parse + Timestamp + Classify<br/>(Detailed Analysis)"]
+        events["📊 Structured Events<br/>(JSON/CSV)"]
+        validate["✅ Integrity Check<br/>& Gap Recovery"]
+    end
+    
+    %% Database and Intelligence
+    questdb[("🗄️ QuestDB<br/>chat table<br/>Time-series optimized")]
+    grafana["📈 Grafana Dashboards<br/>Real-time Analysis"]
+    ska["🧠 SKA Framework<br/>Knowledge Accumulation"]
+    
+    %% Flow Connections
+    terminal --> raw
+    raw --> realtime_detect
+    raw --> logs
+    
+    %% Real-time path
+    realtime_detect --> message_buffer
+    message_buffer --> stream_insert
+    stream_insert --> questdb
+    
+    %% Batch validation path  
+    logs --> parser
+    parser --> events
+    events --> validate
+    validate --> questdb
+    
+    %% Intelligence layer
+    questdb --> grafana
+    questdb --> ska
+    
+    %% Styling
+    classDef input fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef realtime fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px
+    classDef batch fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef storage fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef intelligence fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    
+    class terminal,raw input
+    class realtime_detect,message_buffer,stream_insert realtime
+    class logs,parser,events,validate batch
+    class questdb storage
+    class grafana,ska intelligence
+```
+
 ### Data Flow
 ```
 Terminal Session → Linux Logging → Log Parser → QuestDB → AI Context Retrieval
