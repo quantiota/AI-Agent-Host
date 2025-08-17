@@ -214,6 +214,7 @@ flowchart TD
     class logs,parser,events,validate batch
     class questdb storage
     class grafana,ska intelligence
+
 ```
 
 ### Data Flow
