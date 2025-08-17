@@ -203,11 +203,11 @@ flowchart TD
     questdb --> ska
     
     %% Styling
-    classDef input fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    classDef realtime fill:#e8f5e8,stroke:#2e7d32,stroke-width:3px
+    classDef input fill:#e1f5fe,stroke:#01579b,stroke-width:1px
+    classDef realtime fill:#e8f5e8,stroke:#2e7d32,stroke-width:1px
     classDef batch fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    classDef storage fill:#fff3e0,stroke:#f57c00,stroke-width:2px
-    classDef intelligence fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    classDef storage fill:#fff3e0,stroke:#f57c00,stroke-width:1px
+    classDef intelligence fill:#fce4ec,stroke:#c2185b,stroke-width:1px
     
     class terminal,raw input
     class realtime_detect,message_buffer,stream_insert realtime
