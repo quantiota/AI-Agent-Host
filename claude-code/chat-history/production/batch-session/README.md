@@ -8,12 +8,14 @@ Process entire Claude Code conversations after completion for maximum data integ
 
 **Option 1: Automatic (Recommended)**
 ```bash
+chmode +x ./claude_logger_auto.sh
 ./claude_logger_auto.sh
 # Automatically parses and stores when you exit Claude
 ```
 
 **Option 2: Manual Control**
 ```bash
+chmod + x ./claude_logger_docker.sh
 ./claude_logger_docker.sh
 # Shows exact parsing command to run after session
 ```
