@@ -162,7 +162,7 @@ flowchart TD
     raw["Raw Data:<br/>• Keystrokes<br/>• Screen Output<br/>• Commands"]
     
     %% Dual Processing Paths
-    subgraph "⚡ Real-Time Streaming Path"
+    subgraph "Real-Time Streaming Path"
         direction TB
         realtime_detect[" Live Message Detection<br/>(Lightweight Classification)"]
         message_buffer[" Message Buffer<br/>(2s timeout / 500 chars, debounce & merge)"]
