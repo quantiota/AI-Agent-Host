@@ -158,29 +158,29 @@ config:
 ---
 flowchart TD
     %% Input Layer
-    terminal["🖥️ Terminal Session<br/>(Claude Code)"]
+    terminal[" Terminal Session<br/>(Claude Code)"]
     raw["Raw Data:<br/>• Keystrokes<br/>• Screen Output<br/>• Commands"]
     
     %% Dual Processing Paths
     subgraph "⚡ Real-Time Streaming Path"
         direction TB
-        realtime_detect["🔍 Live Message Detection<br/>(Lightweight Classification)"]
-        message_buffer["📦 Message Buffer<br/>(2s timeout / 500 chars, debounce & merge)"]
-        stream_insert["📡 Stream Insert<br/>(Immediate QuestDB)"]
+        realtime_detect[" Live Message Detection<br/>(Lightweight Classification)"]
+        message_buffer[" Message Buffer<br/>(2s timeout / 500 chars, debounce & merge)"]
+        stream_insert[" Stream Insert<br/>(Immediate QuestDB)"]
     end
     
-    subgraph "🔄 Batch Validation Path"
+    subgraph " Batch Validation Path"
         direction TB
-        logs["📄 Session Logs<br/>• session.log • timing.log • meta.json"]
-        parser["🔬 Full Parse + Timestamp + Classify<br/>(Detailed Analysis)"]
-        events["📊 Structured Events<br/>(JSON/CSV)"]
-        validate["✅ Integrity Check & Gap Recovery<br/>(idempotent upsert)"]
+        logs[" Session Logs<br/>• session.log • timing.log • meta.json"]
+        parser[" Full Parse + Timestamp + Classify<br/>(Detailed Analysis)"]
+        events[" Structured Events<br/>(JSON/CSV)"]
+        validate[" Integrity Check & Gap Recovery<br/>(idempotent upsert)"]
     end
     
     %% Database and Intelligence
-    questdb[("🗄️ QuestDB<br/>chat/events tables<br/>Time-series optimized")]
-    grafana["📈 Grafana Dashboards<br/>Real-time Analysis"]
-    ska["🧠 SKA Framework<br/>Knowledge Accumulation"]
+    questdb[(" QuestDB<br/>chat/events tables<br/>Time-series optimized")]
+    grafana[" Grafana Dashboards<br/>Real-time Analysis"]
+    ska[" SKA Framework<br/>Knowledge Accumulation"]
     
     %% Flow Connections
     terminal --> raw
