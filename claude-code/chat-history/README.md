@@ -169,7 +169,7 @@ flowchart TD
         stream_insert[" Stream Insert<br/>(Immediate QuestDB)"]
     end
     
-    subgraph " Batch Validation Path"
+    subgraph "Batch Validation Path"
         direction TB
         logs[" Session Logs<br/>• session.log • timing.log • meta.json"]
         parser[" Full Parse + Timestamp + Classify<br/>(Detailed Analysis)"]
