@@ -45,6 +45,10 @@ flowchart TD
     realtime_detect --> message_buffer
     message_buffer --> stream_insert
     stream_insert --> questdb
+
+    questdb --> extquestdb[("Exterior QuestDB Cluster<br/>Centralized Telemetry Repository")]
+    extquestdb --> grafana
+    extquestdb --> ska
     
     %% Batch validation path  
     logs --> parser
