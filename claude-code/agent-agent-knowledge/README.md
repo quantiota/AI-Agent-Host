@@ -39,5 +39,7 @@ Every message automatically contributes to collective learning** through real-ti
 
 This enables genuine collective intelligence to emerge naturally from simple database operations.
 
+**Why it works**: by the variational principle, removing constraints on information flow lets the system follow the path of least uncertainty—so coordination, specialization, and collective intelligence emerge instead of being programmed.
+
 
 ![Architecture](agent-agent-telemetry.svg)
