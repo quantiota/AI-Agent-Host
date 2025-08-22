@@ -1,0 +1,101 @@
+---
+config:
+  look: classic
+  theme: base
+  layout: elk
+---
+flowchart TD
+    %% Agents
+    agent1["Agent 1"]
+    agent2["Agent 2"]
+    
+    %% Agent 1 → Agent 2 Flow
+    subgraph "Agent 1 → Agent 2 (Initial Message)"
+        direction TB
+        msg1["Agent 1 Creates Message<br/>(JSON payload with operation/data)"]
+        struct12["Knowledge Structuration<br/>(Extract scope, kind, data, confidence)"]
+        write12["Write to Both Tables<br/>(agent_msgs + knowledge_events linked by msg_id)"]
+        detect12["Notifier Detects<br/>(SELECT from agent_msgs WHERE status='new' AND to_agent='agent2')"]
+        ping2["Notifier Pings Agent 2<br/>(HTTP/WebSocket wake-up)"]
+        read12["Agent 2 Reads Both Tables<br/>(JOIN agent_msgs + knowledge_events)"]
+        ack12["Agent 2 Updates<br/>(SET status='acked' in agent_msgs)"]
+    end
+    
+    %% Agent 2 → Agent 1 Flow (Return)
+    subgraph "Agent 2 → Agent 1 (Return Message)"
+        direction TB
+        msg2["Agent 2 Creates Response<br/>(JSON payload with results/data)"]
+        struct21["Knowledge Structuration<br/>(Extract scope, kind, data, confidence)"]
+        write21["Write to Both Tables<br/>(agent_msgs + knowledge_events linked by msg_id)"]
+        detect21["Notifier Detects<br/>(SELECT from agent_msgs WHERE status='new' AND to_agent='agent1')"]
+        ping1["Notifier Pings Agent 1<br/>(HTTP/WebSocket wake-up)"]
+        read21["Agent 1 Reads Both Tables<br/>(JOIN agent_msgs + knowledge_events)"]
+        ack21["Agent 1 Updates<br/>(SET status='acked' in agent_msgs)"]
+    end
+    
+    %% Database Tables (2-Table Architecture)
+    subgraph "QuestDB 2-Table Storage"
+        direction TB
+        agent_msgs[("agent_msgs table<br/>Universal message bus<br/>Any agent → Any agent")]
+        knowledge_events[("knowledge_events table<br/>Structured knowledge<br/>Linked by msg_id")]
+        schema["agent_msgs:<br/>• ts, msg_id, from_agent, to_agent<br/>• corr_id, payload, status<br/><br/>knowledge_events:<br/>• ts, event_id, msg_id (FK)<br/>• scope, kind, data, confidence, delta_h"]
+    end
+    
+    %% Notifier System
+    notifier["Notifier Process<br/>(Polls agent_msgs every 250-500ms)"]
+    
+    %% Flow Connections - Initial Message
+    agent1 --> msg1
+    msg1 --> struct12
+    struct12 --> write12
+    write12 --> agent_msgs
+    write12 --> knowledge_events
+    agent_msgs --> detect12
+    notifier --> detect12
+    detect12 --> ping2
+    ping2 --> agent2
+    agent2 --> read12
+    read12 --> agent_msgs
+    read12 --> knowledge_events
+    read12 --> ack12
+    ack12 --> agent_msgs
+    
+    %% Flow Connections - Return Message
+    agent2 --> msg2
+    msg2 --> struct21
+    struct21 --> write21
+    write21 --> agent_msgs
+    write21 --> knowledge_events
+    agent_msgs --> detect21
+    notifier --> detect21
+    detect21 --> ping1
+    ping1 --> agent1
+    agent1 --> read21
+    read21 --> agent_msgs
+    read21 --> knowledge_events
+    read21 --> ack21
+    ack21 --> agent_msgs
+    
+    %% Complete Loop Arrow
+    ack12 -.-> msg2
+    
+    %% Schema connection
+    agent_msgs --> schema
+    knowledge_events --> schema
+    
+    %% Styling
+    classDef agents fill:#e1f5fe,stroke:#01579b,stroke-width:0.5px
+    classDef flow1 fill:#e8f5e8,stroke:#2e7d32,stroke-width:0.5px
+    classDef flow2 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:0.5px
+    classDef struct fill:#fff8e1,stroke:#f57c00,stroke-width:0.5px
+    classDef storage fill:#fff3e0,stroke:#ef6c00,stroke-width:0.5px
+    classDef notifier fill:#fce4ec,stroke:#c2185b,stroke-width:0.5px
+    classDef schema fill:#f1f8e9,stroke:#33691e,stroke-width:0.5px
+    
+    class agent1,agent2 agents
+    class msg1,write12,detect12,ping2,read12,ack12 flow1
+    class msg2,write21,detect21,ping1,read21,ack21 flow2
+    class struct12,struct21 struct
+    class agent_msgs,knowledge_events storage
+    class notifier notifier
+    class schema schema
