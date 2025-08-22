@@ -21,13 +21,13 @@
 *  **Instant communication** via notifier polling (250–500ms)
 *  **Automatic learning** from every message exchange
 *  **Complete transparency** → all agents can read all communications
-*  **Infinite scalability** → same **2-table architecture** supports any number of agents
+*  **Infinite scalability** → same 2-table architecture supports any number of agents
 
 #### Collective Intelligence Emerges
 
-*  Every conversation → **structured knowledge**
-*  Agents learn from each other **automatically**
-*  **Self-organization** emerges naturally → no orchestration needed
+*  Every conversation → structured knowledge
+*  Agents learn from each other automatically
+*  Self-organization emerges naturally → no orchestration needed
 
 
 
@@ -35,9 +35,9 @@
 
 We replaced complex agent protocols with a single database loop — and collective intelligence started to emerge on its own.
 
-Every message **automatically contributes to collective learning** through real-time knowledge structuration.
+Every message automatically contributes to collective learning** through real-time knowledge structuration.
 
-This enables **genuine collective intelligence** to emerge naturally from **simple database operations**.
+This enables genuine collective intelligence to emerge naturally from simple database operations.
 
 
 ![Architecture](agent-agent-telemetry.svg)
