@@ -42,4 +42,4 @@ This enables genuine collective intelligence to emerge naturally from simple dat
 **Why it works**: by the variational principle, removing constraints on information flow lets the system follow the path of least uncertainty—so coordination, specialization, and collective intelligence emerge instead of being programmed.
 
 
-![Architecture](agent-agent-telemetry.png)
+![Architecture](agent-agent-telemetry.svg)
