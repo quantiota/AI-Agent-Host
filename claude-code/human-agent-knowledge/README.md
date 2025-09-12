@@ -150,7 +150,7 @@ We treat **human-AI dialogue as operational telemetry**:
 ## Architecture
 
 
-![Architecture](telemetry.svg)
+![Architecture](human-agent-telemetry.png)
 
 ### Data Flow
 ```
