@@ -134,6 +134,7 @@ This folder contains two research papers that establish the mathematical foundat
 
 1. **`2503.13942v1.pdf`** - Core SKA framework and entropy-based learning theory
 2. **`2504.03214v1.pdf`** - Time-invariant properties and continuous learning dynamics
+3. **`the_three_laws_of_intelligence.pdf`** - Unifying Physics, Cognition, and Artificial Intelligence
 
 These papers provide the rigorous mathematical proof for why the AI Agent Host's conversation-based learning approach works and why it produces superior results compared to traditional AI deployment methods.
 
