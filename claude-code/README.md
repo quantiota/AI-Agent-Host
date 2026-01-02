@@ -28,7 +28,7 @@ This separation ensures the infrastructure remains reusable and future-proof.
 
 
 
-To apply this integration, replace the corresponding files in the main `docker` directory with the updated versions provided here.
+To apply this integration, replace the corresponding files in the main `docker` directory with the updated versions provided on `claude-code/docker`.
 
 From the  Code-Server web application, run the command `claude` in the terminal and follow the instructions
 
