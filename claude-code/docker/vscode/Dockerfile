@@ -24,11 +24,9 @@ RUN mkdir -p /home/coder/.claude /home/coder/.config/claude-code && \
 # Switch to coder user
 USER coder
 
-# Configure npm global directory and install Claude Code
-RUN mkdir -p ~/.npm-global && \
-    npm config set prefix '~/.npm-global' && \
-    echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> ~/.bashrc && \
-    npm install -g @anthropic-ai/claude-code
+# Install Claude Code via native installer
+RUN curl -fsSL https://claude.ai/install.sh | bash
+
 
 
 # Install the Visual Studio Code extensions
