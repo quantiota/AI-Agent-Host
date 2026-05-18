@@ -16,7 +16,7 @@ services:
       - .env
 
   grafana:
-    image: grafana/grafana:11.2.0
+    image: grafana/grafana:12.4.1
     ports:
       - "3000:3000"
     volumes:
@@ -24,13 +24,16 @@ services:
       - ./grafana/provisioning/datasources/:/etc/grafana/provisioning/datasources/
       - ./grafana/provisioning/dashboards/:/etc/grafana/provisioning/dashboards/
       - ./grafana/dashboards:/etc/dashboards
+    extra_hosts:
+      - "host.docker.internal:host-gateway"        
+
     depends_on:
       - questdb
     env_file:
       - .env
 
   questdb:
-    image: questdb/questdb:8.1.2
+    image: questdb/questdb:9.3.3
     ports:
       - "9000:9000"
       - "9009:9009"
