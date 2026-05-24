@@ -32,6 +32,6 @@ USER coder
 
 # Install VS Code extensions
 
-RUN code-server --install-extension ms-toolsai.jupyter@2023.9.100 \
+RUN code-server --install-extension ms-toolsai.jupyter@2025.9.1 \
     		--install-extension ms-toolsai.vscode-jupyter-powertoys \
     		--install-extension ms-python.python
