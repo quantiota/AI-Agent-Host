@@ -3,4 +3,4 @@
 # some-MarketData-package==x.y.z   <- Comment or uncomment based on the application
 psycopg2-binary==2.9.12
 websocket-client==1.9.0
-asciinema
+
