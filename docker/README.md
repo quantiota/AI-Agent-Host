@@ -24,7 +24,7 @@ Access QuestDB GUI through [localhost:9000](http://localhost:9000).
 Access the database using [localhost:8812](http://localhost:8812).
 
 :lock:
-The user/password are the default one: `admin:quest` ([see the documentation](https://questdb.io/docs/reference/configuration/#postgres-wire-protocol)) and the database name is `qdb`.
+The user/password are the default one: `admin:quest` ([see the documentation](https://questdb.io/docs/reference/configuration/#questdb-questdb-datasource-wire-protocol)) and the database name is `qdb`.
 
 ### Grafana
 
