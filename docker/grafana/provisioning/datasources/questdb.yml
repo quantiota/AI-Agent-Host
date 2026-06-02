@@ -4,11 +4,15 @@
 # runs deletes BEFORE creates on each boot, so combining them here would delete
 # the datasource and immediately recreate it on every restart.
 #
-# Cleanup file example: ./cleanup-questdb.yaml
-#   apiVersion: 1
-#   deleteDatasources:
-#     - name: QuestDB
-#       orgId: 1
+# Cleanup file example: ./cleanup.yaml
+#              apiVersion: 1
+#              deleteDatasources:
+#                - name: QuestDB
+#                  orgId: 1             
+#              
+#                - name: Prometheus
+#                  orgId: 1
+#   
 #
 # After the next `docker compose restart grafana`, verify removal with:
 #   curl -s -u admin:admin http://localhost:3000/api/datasources
@@ -32,4 +36,4 @@ datasources:
       maxConnectionLifetime: 14400
     secureJsonData:
       password: ${GRAFANA_QUESTDB_PASSWORD}
-      # tlsCACert: <string>  
+      # tlsCACert: <string> 
