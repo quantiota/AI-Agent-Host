@@ -1,43 +1,26 @@
 
-## Install
 
-This command will update the package list and install rsnapshot on the system. 
-```
-sudo apt-get update && sudo apt-get install rsnapshot
-```
-To create a backup directory and mount the Microserver RAID storage volume to it, first create a directory named "backup" in the root directory of the Linux system using the command "mkdir /backup". Then create a subdirectory named "rsnapshot" inside the backup directory using the command "mkdir -p /backup/rsnapshot". 
+# README
 
-Next, identify the device name of the RAID storage volume using the command "lsblk" and make note of it. Use the command "sudo blkid" to obtain the UUID of the RAID storage volume.
+This folder contains configuration files and scripts for automating backups using **rsnapshot**, a filesystem snapshot utility based on `rsync`.
 
-To mount the RAID storage volume to the backup directory, add the following line to the "/etc/fstab" file:
+## Contents
 
-```
-UUID=<RAID-storage-UUID> /backup ext4 defaults 0 0
-```
-Replace " &lt;RAID-storage-UUID &gt;" with the UUID obtained from the previous step. Finally, use the command "mount -t" to mount the RAID storage volume to the backup directory. Now, the RAID storage volume will be automatically mounted to the backup directory upon system startup.
-  
-  
-  To mount a RAID storage volume to the backup directory /backup, you can use a command like this:
+- **`rsnapshot.conf`**: The main configuration file for `rsnapshot`. It specifies backup intervals, retention policies, and the directories or systems to back up.
+- **`cron`**: A cron job script that schedules `rsnapshot` to run at specified intervals.
 
-  ```
-  sudo mount -t ext4 /dev/sdbx /backup
-  ```
-  Here, ext4 is the file system type, /dev/sdbx is the device name of the RAID storage volume, and /backup is the mount point. Note that you may need to adjust the file system type and device name based on your specific setup. Also, the sudo command is used to run the command with administrative privileges.
+## Optional: back up Docker named volumes
 
-
-
-## Configuration
-
-Replace the default configuration files with those located in the config folder.
-
-## Usage
-
-- Recovery
-
-In the root directory add the script and run the command:
+`rsnapshot.conf` includes a commented line (232):
 
 ```
-bash -x recovery-microserver.sh
+#backup	/var/lib/docker/volumes/	localhost/
 ```
 
+Uncomment it to also back up the Docker named volumes (QuestDB, Grafana, Claude session/config). It's **optional** — by default only `/home`, `/etc`, `/usr/local`, `/usr/share`, and `/opt` are backed up.
 
+
+## Additional Resources
+
+- rsnapshot [Documentation](http://rsnapshot.org/) 
+- Cron How-To: [Cron Tutorial](https://help.ubuntu.com/community/CronHowto)
