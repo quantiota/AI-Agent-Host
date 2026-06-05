@@ -1,10 +1,7 @@
 
-## Install
+## RAID
 
-This command will update the package list and install rsnapshot on the system. 
-```
-sudo apt-get update && sudo apt-get install rsnapshot
-```
+
 To create a backup directory and mount the Microserver RAID storage volume to it, first create a directory named "backup" in the root directory of the Linux system using the command "mkdir /backup". Then create a subdirectory named "rsnapshot" inside the backup directory using the command "mkdir -p /backup/rsnapshot". 
 
 Next, identify the device name of the RAID storage volume using the command "lsblk" and make note of it. Use the command "sudo blkid" to obtain the UUID of the RAID storage volume.
@@ -25,20 +22,5 @@ Replace " &lt;RAID-storage-UUID &gt;" with the UUID obtained from the previous s
   Here, ext4 is the file system type, /dev/sdbx is the device name of the RAID storage volume, and /backup is the mount point. Note that you may need to adjust the file system type and device name based on your specific setup. Also, the sudo command is used to run the command with administrative privileges.
 
 
-
-## Configuration
-
-Replace the default configuration files with those located in the config folder.
-
-## Usage
-
-- Recovery
-
-In the root directory add the script and run the command:
-
-```
-chmod +x recovery-microserver.sh
-bash -x recovery-microserver.sh
-```
 
 
