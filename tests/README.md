@@ -181,5 +181,5 @@ You can also run the existing notebook in the project folder within VSCode. Foll
 
 5. [Grafana - The open observability platform](https://grafana.com/)
 
-6. [Langchain](https://python.langchain.com)
+
 
